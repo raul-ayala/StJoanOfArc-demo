@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  body{margin:0;background:#0c0f27;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif}
+  .dv-turn{padding:48px 52px}
+  .dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 8px}
+  .dv-tid{font:600 10px ui-monospace,Menlo,monospace;padding:3px 7px;background:#E9D99E;color:#181e4e;border-radius:4px;text-decoration:none}
+  .dv-tname{font:600 13px/1.2 'Montserrat',sans-serif;color:#fff}
+  .dv-sub{font:400 12px 'Helvetica Neue';color:rgba(255,255,255,.5);margin:0 0 30px}
+  .dv-row{display:flex;flex-direction:column;gap:26px;max-width:760px}
+  .dv-opt{display:flex;flex-direction:column;gap:9px}
+  .dv-olabel{display:flex;align-items:baseline;gap:8px;font:400 12px 'Montserrat',sans-serif;color:rgba(255,255,255,.6)}
+  .dv-oid{font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(255,255,255,.12);color:#E9D99E;border-radius:5px;text-decoration:none}
+  .dv-stage{padding:30px 26px;background:linear-gradient(rgba(9,12,32,.35),rgba(9,12,32,.55)),url('assets/img1.jpg') center 34%/cover no-repeat;border-radius:14px;display:flex;justify-content:center}
+
+  /* shared pill base */
+  .p{position:relative;display:inline-flex;align-items:center;gap:12px;padding:5px 15px 5px 24px;border-radius:999px;background:#fff;box-shadow:0 6px 22px rgba(0,0,0,.18);text-decoration:none;overflow:hidden;cursor:pointer}
+  .p .txt{position:relative;z-index:2;color:#181e4e;font:400 16px 'Helvetica Neue',sans-serif;white-space:nowrap}
+  .p .txt b{color:#a8863a;font-weight:600;transition:color .25s ease}
+  .p .arw{position:relative;z-index:2;display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;flex:none;border-radius:50%;background:#E9D99E;color:#0c0f27;transition:transform .25s ease,background .25s ease}
+  .p svg{display:block}
+
+  /* 2a — arrow launches out & back, circle fills gold */
+  .a2a:hover .arw{transform:translate(4px,-4px);background:#dcc46a}
+  .a2a:hover .txt b{color:#8a6f25}
+
+  /* 2b — sweep fill: gold wipes across, text/arrow invert */
+  .a2b .fill{position:absolute;inset:0;z-index:1;background:#E9D99E;transform:translateX(-101%);transition:transform .4s cubic-bezier(.65,0,.2,1)}
+  .a2b:hover .fill{transform:translateX(0)}
+  .a2b .arw{background:#181e4e;color:#E9D99E}
+  .a2b:hover .arw{background:#181e4e;color:#fff;transform:rotate(45deg)}
+  .a2b:hover .txt b{color:#5f4d17}
+
+  /* 2c — arrow slides out right, new arrow slides in (loop) */
+  .a2c .arw{overflow:hidden}
+  .a2c .arw svg{transition:transform .3s ease}
+  .a2c .arw .s2{position:absolute;transform:translate(-140%,140%)}
+  .a2c:hover .arw .s1{transform:translate(140%,-140%)}
+  .a2c:hover .arw .s2{transform:translate(0,0)}
+  .a2c:hover .arw{background:#181e4e;color:#E9D99E}
+
+  /* 2d — pill lifts & expands gap, arrow circle grows */
+  .a2d{transition:transform .25s ease,box-shadow .25s ease,gap .25s ease}
+  .a2d:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(0,0,0,.32);gap:18px}
+  .a2d:hover .arw{transform:scale(1.12) translate(2px,-2px);background:#dcc46a}
+  h2,h3{font-family:'Montserrat',sans-serif;margin:0}
+</style>
+</helmet>
+<div>
+<section class="dv-turn" id="t2">
+  <div class="dv-thd"><a class="dv-tid" href="#t2">2</a><span class="dv-tname">Coffee CTA — 4 efectos de hover (pasa el cursor sobre cada píldora)</span></div>
+  <p class="dv-sub">La opción actual es la flecha en diagonal. Estas 4 son alternativas más elegantes y distintas.</p>
+  <div class="dv-row">
+
+    <div class="dv-opt" id="2a">
+      <div class="dv-olabel"><a class="dv-oid" href="#2a">2a</a>Lanzamiento diagonal + el dorado se oscurece (refinado, sutil)</div>
+      <div class="dv-stage">
+        <a class="p a2a" href="#">
+          <span class="txt">Curious about the Catholic faith? <b>Let us buy you a coffee</b></span>
+          <span class="arw"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="dv-opt" id="2b">
+      <div class="dv-olabel"><a class="dv-oid" href="#2b">2b</a>Barrido dorado: el color inunda la píldora y la flecha gira 45°</div>
+      <div class="dv-stage">
+        <a class="p a2b" href="#">
+          <span class="fill"></span>
+          <span class="txt">Curious about the Catholic faith? <b>Let us buy you a coffee</b></span>
+          <span class="arw"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="dv-opt" id="2c">
+      <div class="dv-olabel"><a class="dv-oid" href="#2c">2c</a>Flecha en bucle: sale por arriba-derecha y entra otra por abajo-izquierda</div>
+      <div class="dv-stage">
+        <a class="p a2c" href="#">
+          <span class="txt">Curious about the Catholic faith? <b>Let us buy you a coffee</b></span>
+          <span class="arw"><svg class="s1" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg><svg class="s2" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="dv-opt" id="2d">
+      <div class="dv-olabel"><a class="dv-oid" href="#2d">2d</a>Elevación: la píldora sube, el gap se abre y el círculo crece</div>
+      <div class="dv-stage">
+        <a class="p a2d" href="#">
+          <span class="txt">Curious about the Catholic faith? <b>Let us buy you a coffee</b></span>
+          <span class="arw"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+  <p class="dv-sub" style="margin-top:30px">Dime cuál quieres (<a class="dv-oid" href="#2a">2a</a>–<a class="dv-oid" href="#2d">2d</a>) y lo aplico al botón del hero.</p>
+</section>
+</div>
+</x-dc>
+</body>
+</html>

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:300;color:#2a2f45;background:#fff;-webkit-font-smoothing:antialiased}
+  a{text-decoration:none;color:#b8963f}
+  a:hover{color:#bc9507}
+  h1,h2,h3,h4{font-family:'Montserrat',sans-serif;margin:0}
+  img{display:block;max-width:100%}
+  .lbl{font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:1.5px;color:#b8963f}
+  @keyframes jpFloat{0%,100%{transform:translateY(0);opacity:.55}50%{transform:translateY(7px);opacity:1}}
+  @keyframes jpTrack{0%{transform:translateY(-8px);opacity:0}30%{opacity:1}70%{opacity:1}100%{transform:translateY(14px);opacity:0}}
+  @keyframes jpPreIn{0%{opacity:0;transform:scale(.94)}100%{opacity:1;transform:scale(1)}}
+  .r-coffee:hover .r-coffee-arrow{transform:rotate(45deg)}
+  @media (max-width:900px){
+    .r-sec{padding-left:22px !important;padding-right:22px !important}
+    .r-sec-pad{padding-top:52px !important;padding-bottom:52px !important}
+    .r-hero-h1{font-size:32px !important;line-height:1.22 !important}
+    .r-grid2{grid-template-columns:1fr !important}
+    .r-ccfeat{grid-template-columns:1fr !important}
+    .r-ccfeat .r-ccimg{min-height:240px !important;order:-1}
+    .r-ccpad{padding:48px 26px !important}
+    .r-res{grid-template-columns:1fr 1fr !important}
+    .r-foot{grid-template-columns:1fr !important;gap:32px !important}
+    .r-infobar{position:static !important;transform:none !important;margin:0 auto !important;grid-template-columns:1fr !important;gap:0 !important;white-space:normal !important;border-radius:0 !important;width:100% !important;max-width:100% !important}
+    .r-infobar .r-divider{display:none}
+    .r-infobar .r-slot{justify-content:center;padding:14px 0;border-bottom:1px solid rgba(233,217,158,.2)}
+    .r-cue{bottom:190px !important}
+    .r-cc{background-position:68% 22% !important}
+  }
+  @media (max-width:560px){
+    .r-res{grid-template-columns:1fr !important}
+    .r-hero-h1{font-size:27px !important}
+    .r-coffee{padding:8px 10px 8px 20px !important}
+    #jp-pre-logo,#jp-nav-logo{width:auto !important;max-width:64vw}
+    #jp-navinner{padding-left:22px !important;padding-right:22px !important}
+    .r-coffee>span:first-child{font-size:14px !important;line-height:1.35 !important;text-align:left}
+    .r-coffee>span:first-child>span{display:block}
+  }
+</style>
+</helmet>
+<div style="width:100%;overflow-x:hidden">
+
+  <!-- ============ PRELOADER ============ -->
+  <div id="jp-pre" style="position:fixed;inset:0;z-index:9999;background:#0c0f27;display:flex;align-items:center;justify-content:center">
+    <img id="jp-pre-logo" src="assets/logo_header.avif" alt="St. Joan of Arc" style="height:52px;width:246px;transform-origin:center;animation:jpPreIn .7s ease both">
+  </div>
+
+  <!-- ============ HERO (1a) ============ -->
+  <section style="position:relative;min-height:100vh;background:linear-gradient(rgba(20,26,66,.22),rgba(12,15,39,.58)),url('assets/adoration.jpg') center 34%/cover no-repeat;display:flex;flex-direction:column">
+    <!-- top nav (fixed, translucent on scroll) -->
+    <div id="jp-nav" style="position:fixed;top:0;left:0;right:0;z-index:80;background:transparent;border-bottom:1px solid transparent;transition:background .35s ease,border-color .35s ease,box-shadow .35s ease,backdrop-filter .35s ease">
+      <div id="jp-navinner" style="display:flex;align-items:center;justify-content:space-between;gap:48px;padding:24px 40px;max-width:1280px;margin:0 auto;width:100%;transition:padding .35s ease">
+        <a href="#"><img id="jp-nav-logo" src="assets/logo_header.avif" alt="St. Joan of Arc" style="height: 52px; visibility: hidden; width: 246px"></a>
+        <nav id="jp-navlinks" style="display:flex;align-items:center;gap:26px">
+          <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="7">
+            <div style="position:relative" onMouseEnter="{{ item.onEnter }}" onMouseLeave="{{ closeMenu }}">
+              <sc-if value="{{ item.isCta }}" hint-placeholder-val="{{ false }}">
+                <a href="{{ item.href }}" style="display:block;background:#E9D99E;color:#181e4e;font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;letter-spacing:1px;white-space:nowrap;padding:11px 20px;border-radius:8px;transition:background .2s ease" style-hover="background:#f2e7bc">{{ item.label }}</a>
+              </sc-if>
+              <sc-if value="{{ item.isLink }}" hint-placeholder-val="{{ true }}">
+                <a href="{{ item.href }}" style="display:block;color:{{ item.color }};font-family:'Montserrat',sans-serif;font-weight:600;font-size:13px;letter-spacing:1px;white-space:nowrap;padding:4px 0;transition:color .2s ease" style-hover="color:#e9d99e">{{ item.label }}</a>
+              </sc-if>
+              <sc-if value="{{ item.open }}" hint-placeholder-val="{{ false }}">
+                <div style="position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:14px;z-index:90">
+                  <div style="min-width:230px;background:#fff;box-shadow:0 18px 44px rgba(0,0,0,.22);padding:8px 0">
+                    <sc-for list="{{ item.menu }}" as="sub" hint-placeholder-count="4">
+                      <a href="{{ sub.href }}" style="display:block;color:#2a2f45;font-family:'Montserrat',sans-serif;font-weight:500;font-size:13px;letter-spacing:.6px;padding:13px 26px;white-space:nowrap;transition:background .15s ease,color .15s ease" style-hover="background:#f4eede;color:#a8863a">{{ sub.label }}</a>
+                    </sc-for>
+                  </div>
+                </div>
+              </sc-if>
+            </div>
+          </sc-for>
+        </nav>
+        <button id="jp-burger" onClick="{{ toggleBurger }}" aria-label="Menu" style="display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px">
+          <span style="width:26px;height:2px;background:#fff;display:block"></span>
+          <span style="width:26px;height:2px;background:#fff;display:block"></span>
+          <span style="width:26px;height:2px;background:#fff;display:block"></span>
+        </button>
+      </div>
+    </div>
+    <div style="position:fixed;inset:0;z-index:95;background:rgba(9,12,32,.97);display:flex;flex-direction:column;padding:26px 30px;overflow-y:auto;transition:opacity .38s ease,transform .42s cubic-bezier(.4,0,.2,1);opacity:{{ drawerOpacity }};transform:{{ drawerTransform }};pointer-events:{{ drawerPointer }}">
+        <div style="display:flex;justify-content:flex-end">
+          <button onClick="{{ toggleBurger }}" aria-label="Close" style="background:none;border:none;color:#fff;font:300 40px 'Montserrat',sans-serif;line-height:1;cursor:pointer">×</button>
+        </div>
+        <nav style="display:flex;flex-direction:column;gap:4px;margin-top:10px">
+          <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="7">
+            <div style="border-bottom:1px solid rgba(255,255,255,.1)">
+              <sc-if value="{{ item.hasMenu }}" hint-placeholder-val="{{ false }}">
+                <button onClick="{{ item.onDrawerToggle }}" style="display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;cursor:pointer;padding:16px 0;text-align:left">
+                  <span style="color:#fff;font-family:'Montserrat',sans-serif;font-weight:600;font-size:16px;letter-spacing:1px">{{ item.label }}</span>
+                  <span style="color:#e9d99e;font-size:20px;line-height:1;transition:transform .25s ease;transform:{{ item.chevRotate }}">⌄</span>
+                </button>
+                <sc-if value="{{ item.drawerOpen }}" hint-placeholder-val="{{ false }}">
+                  <div style="display:flex;flex-direction:column;gap:2px;padding:0 4px 14px">
+                    <sc-for list="{{ item.menu }}" as="sub" hint-placeholder-count="3">
+                      <a href="{{ sub.href }}" style="display:block;color:#c3c7dd;font-family:'Helvetica Neue',sans-serif;font-size:14px;padding:8px 0">{{ sub.label }}</a>
+                    </sc-for>
+                  </div>
+                </sc-if>
+              </sc-if>
+              <sc-if value="{{ item.drawerPlain }}" hint-placeholder-val="{{ true }}">
+                <a href="{{ item.href }}" style="display:block;color:#fff;font-family:'Montserrat',sans-serif;font-weight:600;font-size:16px;letter-spacing:1px;padding:16px 0">{{ item.label }}</a>
+              </sc-if>
+            </div>
+          </sc-for>
+        </nav>
+      </div>
+    <!-- center copy -->
+    <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px;gap:16px">
+      <h1 class="r-hero-h1" style="max-width:820px;font-size:46px;line-height:1.24;color:#fff;font-weight:700;text-shadow:0 2px 14px rgba(0,0,0,.45)">Leading souls, through love or battle, to Christ the true King</h1>
+      <a href="https://www.stjoanarvada.org/catholic-curious" class="r-coffee" style="display: inline-flex; align-items: center; gap: 12px; margin-top: 24px; padding: 5px 15px 5px 24px; border: 1px solid rgba(255,255,255,.7); border-radius: 999px; box-shadow: 0 6px 22px rgba(0,0,0,.18); opacity: 1; transition: background .2s ease,box-shadow .2s ease; background-color: #FFFFFF" style-hover="background:#fbf6e6;box-shadow:0 8px 26px rgba(0,0,0,.24)">
+        <span style="color: #181e4e; font: 400 15px 'Helvetica Neue',sans-serif; font-size: 16px">Curious about the Catholic faith? <span style="color: rgb(168, 134, 58); font-weight: 600;">Let us buy you a coffee</span></span>
+        <span class="r-coffee-arrow" style="display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; flex:none; border-radius: 50%; color: #0c0f27; font-size: 16px; background-color: #E9D99E; transition:transform .2s ease"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></span>
+      </a>
+    </div>
+    <!-- next mass / next confession — anchored lower, with contrast backing -->
+    <div class="r-infobar" style="position:absolute;left:50%;bottom:52px;transform:translateX(-50%);display:grid;grid-template-columns:1fr 1px 1fr;align-items:center;gap:28px;background:rgba(9,12,32,.66);backdrop-filter:blur(10px);border:1px solid rgba(233,217,158,.3);border-radius:16px;padding:16px 30px;white-space:nowrap">
+      <div class="r-slot" style="display:flex;align-items:center;gap:11px">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#f0e4b8" stroke-width="1.6"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+        <div style="text-align:left"><div style="font:700 10px 'Montserrat';letter-spacing:1.5px;color:#f0e4b8">NEXT MASS</div><div style="color:#fff;font-size:15px;margin-top:2px">Today · 8:30 a.m.</div></div>
+      </div>
+      <div class="r-divider" style="width:1px;height:36px;background:rgba(233,217,158,.4)"></div>
+      <div class="r-slot" style="display:flex;align-items:center;gap:11px">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#f0e4b8" stroke-width="1.6"><path d="M12 3v18M7 8h10M7 8a5 5 0 0 0 10 0"></path></svg>
+        <div style="text-align:left"><div style="font:700 10px 'Montserrat';letter-spacing:1.5px;color:#f0e4b8">NEXT CONFESSION</div><div style="color:#fff;font-size:15px;margin-top:2px">Today · 8:00 – 8:25 a.m.</div></div>
+      </div>
+    </div>
+  </section>
+    <!-- scroll cue -->
+    <div class="r-cue" style="position:absolute;left:50%;bottom:172px;transform:translateX(-50%);pointer-events:none">
+      <div style="position:relative;width:22px;height:34px;border:1px solid rgba(233,217,158,.6);border-radius:12px;overflow:hidden">
+        <span style="position:absolute;left:50%;top:7px;margin-left:-2px;width:4px;height:4px;border-radius:50%;background:#e9d99e;animation:jpTrack 1.8s ease-in-out infinite"></span>
+      </div>
+    </div>
+  
+
+  <!-- ============ SCHEDULE: MASS + CONFESSION ============ -->
+  <section class="r-sec r-sec-pad" style="background:#fff;padding:76px 40px">
+    <div style="max-width:1280px;margin:0 auto">
+      <div style="text-align:center;margin-bottom:46px">
+        <p class="lbl">JOIN US IN PRAYER</p>
+        <h2 style="font-size:34px;color:#181e4e;font-weight:700;margin-top:10px">Mass &amp; Confession Times</h2>
+      </div>
+      <div class="r-grid2" style="display:grid;grid-template-columns:1fr 1fr;gap:26px">
+
+        <!-- Mass -->
+        <div style="background:#fff;border:1px solid #efece2;border-radius:18px;padding:40px 42px;box-shadow:0 2px 20px rgba(24,30,78,.05)">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:26px">
+            <span style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;background:#181e4e"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#e9d99e" stroke-width="1.5"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span>
+            <h3 style="font-size:22px;color:#181e4e">Mass Times</h3>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:22px">
+            <div><p class="lbl">WEEKEND</p><p style="font-size:16px;line-height:1.8;color:#242942;font-weight:400;margin-top:6px">Saturday Vigil 5:00 p.m.<br>Sunday 7:30, 9:00, 11:30 a.m. &amp; 5:30 p.m. <span style="color:#8a6f2c">(Candlelight)</span><br><span style="font-size:14px;font-style:italic;color:#6a6f88">Livestream Sunday 9:00 a.m.</span></p></div>
+            <div><p class="lbl">DAILY</p><p style="font-size:16px;line-height:1.8;color:#242942;font-weight:400;margin-top:6px">Monday – Saturday 8:30 a.m.<br>Wednesday 5:30 p.m. · First Friday 5:30 p.m.</p></div>
+            <div><p class="lbl">HOLY DAYS OF OBLIGATION</p><p style="font-size:16px;line-height:1.8;color:#242942;font-weight:400;margin-top:6px">Vigil 5:30 p.m. · 8:30 a.m., Noon &amp; 7:00 p.m.</p></div>
+          </div>
+        </div>
+
+        <!-- Confession -->
+        <div style="background:#fff;border:1px solid #efece2;border-radius:18px;padding:40px 42px;box-shadow:0 2px 20px rgba(24,30,78,.05)">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:26px">
+            <span style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;background:#181e4e"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#e9d99e" stroke-width="1.5"><path d="M12 3v18M7 8h10M7 8a5 5 0 0 0 10 0"></path></svg></span>
+            <h3 style="font-size:22px;color:#181e4e">Confession</h3>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:22px">
+            <div><p class="lbl">TUESDAY – FRIDAY</p><p style="font-size:16px;line-height:1.8;color:#242942;font-weight:400;margin-top:6px">8:00 – 8:25 a.m.</p></div>
+            <div><p class="lbl">WEDNESDAY</p><p style="font-size:16px;line-height:1.8;color:#242942;font-weight:400;margin-top:6px">4:45 – 5:25 p.m.</p></div>
+            <div><p class="lbl">SATURDAY</p><p style="font-size:16px;line-height:1.8;color:#242942;font-weight:400;margin-top:6px">7:30 – 8:25 a.m. &amp; 4:00 – 4:45 p.m.</p></div>
+            <p style="font-size:14px;line-height:1.7;color:#6a6f88">Or call the Parish Office at <a href="tel:3034201232" style="text-decoration:underline">303.420.1232</a> for a private appointment.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CATHOLIC CURIOUS FEATURE ============ -->
+  <section class="r-cc" style="position:relative;min-height:100vh;background:url('assets/cc_prayer.jpg') center/cover no-repeat;display:flex">
+    <div style="position:absolute;inset:0;background:linear-gradient(105deg,rgba(9,12,32,0) 38%,rgba(9,12,32,.55) 68%,rgba(9,12,32,.86) 100%)"></div>
+    <div style="position:absolute;right:0;bottom:0;max-width:560px;padding:0 clamp(28px,6vw,80px) clamp(48px,8vh,90px);text-align:right;display:flex;flex-direction:column;align-items:flex-end">
+      <h2 style="font-size: clamp(28px,4vw,40px); font-weight: 700; line-height: 1.22; color: #F0E4B8; margin: 12px 0 18px; text-shadow: 0 2px 10px rgba(0,0,0,.55)">Curious about the Catholic Church?</h2>
+      <p style="font-size: 17px; line-height: 1.7; color: #eef0f7; max-width: 460px; margin-bottom: 30px; text-shadow: 0 1px 6px rgba(0,0,0,.7); font-weight: 400">Whether you're returning, exploring, or just wondering — we'd love to sit down with you. Let us buy you a coffee and answer your questions, no strings attached.</p>
+      <a href="https://www.stjoanarvada.org/catholic-curious" style="display:inline-flex;align-items:center;gap:10px;background:#E9D99E;color:#181e4e;font:700 14px 'Montserrat';letter-spacing:.5px;padding:15px 26px;border-radius:10px;transition:background .2s ease,transform .2s ease" style-hover="background:#f2e7bc;transform:translateY(-2px)">Let us buy you a coffee <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></a>
+    </div>
+  </section>
+
+  <!-- ============ RESOURCES GRID ============ -->
+  <section class="r-sec r-sec-pad" style="background:#fbfaf7;padding:84px 40px">
+    <div style="max-width:1280px;margin:0 auto">
+      <div style="text-align:center;margin-bottom:44px">
+        <p class="lbl">FIND WHAT YOU NEED</p>
+        <h2 style="font-size:34px;color:#181e4e;font-weight:700;margin-top:10px">Parish Resources</h2>
+      </div>
+      <div class="r-res" style="display:grid;grid-template-columns:repeat(5,1fr);gap:18px">
+
+        <a href="#" style="display:flex;flex-direction:column;gap:18px;background:#fff;border-radius:16px;padding:30px 26px;box-shadow:0 1px 3px rgba(0,0,0,.07);border:1px solid transparent;transition:all .2s ease" style-hover="box-shadow:0 16px 34px rgba(24,30,78,.16);transform:translateY(-6px);background:#fdfbf3;border:1px solid #e6dcbb">
+          <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#181e4e" stroke-width="1.4"><path d="M12 5.5C10 4 6.5 4 4 4.5v14C6.5 18 10 18 12 19.5M12 5.5C14 4 17.5 4 20 4.5v14C17.5 18 14 18 12 19.5M12 5.5v14"></path></svg>
+          <div><h4 style="font-size:16px;color:#181e4e;margin-bottom:6px">Bulletins</h4><p style="font-size:13px;line-height:1.5;color:#6a6f88;font-weight:400;margin:2px 0 4px">Read this week’s parish bulletin.</p><span style="color:#8a6f25;font-size:14px;font-weight:500;display:inline-flex;align-items:center;gap:5px">Read now <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></div>
+        </a>
+        <a href="#" style="display:flex;flex-direction:column;gap:18px;background:#fff;border-radius:16px;padding:30px 26px;box-shadow:0 1px 3px rgba(0,0,0,.07);border:1px solid transparent;transition:all .2s ease" style-hover="box-shadow:0 16px 34px rgba(24,30,78,.16);transform:translateY(-6px);background:#fdfbf3;border:1px solid #e6dcbb">
+          <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#181e4e" stroke-width="1.4" stroke-linecap="round"><path d="M12 3v18M8 8h8"></path></svg>
+          <div><h4 style="font-size:16px;color:#181e4e;margin-bottom:6px">Sacraments</h4><p style="font-size:13px;line-height:1.5;color:#6a6f88;font-weight:400;margin:2px 0 4px">Baptism, marriage, and more.</p><span style="color:#8a6f25;font-size:14px;font-weight:500;display:inline-flex;align-items:center;gap:5px">Learn more <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></div>
+        </a>
+        <a href="#" style="display:flex;flex-direction:column;gap:18px;background:#fff;border-radius:16px;padding:30px 26px;box-shadow:0 1px 3px rgba(0,0,0,.07);border:1px solid transparent;transition:all .2s ease" style-hover="box-shadow:0 16px 34px rgba(24,30,78,.16);transform:translateY(-6px);background:#fdfbf3;border:1px solid #e6dcbb">
+          <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#181e4e" stroke-width="1.4"><path d="M6 3h8l4 4v14H6zM14 3v4h4M9 12h6M9 16h6"></path></svg>
+          <div><h4 style="font-size:16px;color:#181e4e;margin-bottom:6px">Forms</h4><p style="font-size:13px;line-height:1.5;color:#6a6f88;font-weight:400;margin:2px 0 4px">Registration and parish forms.</p><span style="color:#8a6f25;font-size:14px;font-weight:500;display:inline-flex;align-items:center;gap:5px">Open <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></div>
+        </a>
+        <a href="#" style="display:flex;flex-direction:column;gap:18px;background:#fff;border-radius:16px;padding:30px 26px;box-shadow:0 1px 3px rgba(0,0,0,.07);border:1px solid transparent;transition:all .2s ease" style-hover="box-shadow:0 16px 34px rgba(24,30,78,.16);transform:translateY(-6px);background:#fdfbf3;border:1px solid #e6dcbb">
+          <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#181e4e" stroke-width="1.4"><path d="M12 20s-7-4.5-7-9.5A3.5 3.5 0 0 1 12 8a3.5 3.5 0 0 1 7 2.5C19 15.5 12 20 12 20z"></path></svg>
+          <div><h4 style="font-size:16px;color:#181e4e;margin-bottom:6px">In Need of Help?</h4><p style="font-size:13px;line-height:1.5;color:#6a6f88;font-weight:400;margin:2px 0 4px">Find care and assistance.</p><span style="color:#8a6f25;font-size:14px;font-weight:500;display:inline-flex;align-items:center;gap:5px">Get support <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></div>
+        </a>
+        <a href="#" style="display:flex;flex-direction:column;gap:18px;background:#fff;border-radius:16px;padding:30px 26px;box-shadow:0 1px 3px rgba(0,0,0,.07);border:1px solid transparent;transition:all .2s ease" style-hover="box-shadow:0 16px 34px rgba(24,30,78,.16);transform:translateY(-6px);background:#fdfbf3;border:1px solid #e6dcbb">
+          <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#181e4e" stroke-width="1.4"><path d="M4 21h16M5 21V9l7-4 7 4v12M9 21v-5h6v5M9 12h.01M15 12h.01"></path></svg>
+          <div><h4 style="font-size:16px;color:#181e4e;margin-bottom:6px">Archdiocesan Resources</h4><p style="font-size:13px;line-height:1.5;color:#6a6f88;font-weight:400;margin:2px 0 4px">Resources from the Archdiocese of Denver.</p><span style="color:#8a6f25;font-size:14px;font-weight:500;display:inline-flex;align-items:center;gap:5px">Explore <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FLOCKNOTE ============ -->
+  <section class="r-sec r-sec-pad" style="background:#0c0f27;padding:76px 40px">
+    <div style="max-width:760px;margin:0 auto;text-align:center">
+      <img src="assets/flocknote_logo.avif" alt="Flocknote" style="height:56px;width:auto;margin:0 auto 18px">
+      <p style="font-size: 16px; line-height: 1.7; color: #c3c7dd; margin-bottom: 30px; font-weight: 400">Sign up for Flocknote to receive the latest updates and announcements from St. Joan of Arc Catholic Church! Already signed up? <a href="https://stjoanofarc.flocknote.com/login" style="color:#e9d99e;text-decoration:underline">Click here.</a></p>
+      <form onSubmit="{{ onSubmit }}" style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center">
+        <input type="text" placeholder="First Name" style="flex:1;min-width:180px;padding:14px 16px;border:1px solid #d5d8e5;background:#fff;color:#333;font-size:15px;border-radius:8px;font-family:'Helvetica Neue',Arial,sans-serif">
+        <input type="text" placeholder="Last Name" style="flex:1;min-width:180px;padding:14px 16px;border:1px solid #d5d8e5;background:#fff;color:#333;font-size:15px;border-radius:8px;font-family:'Helvetica Neue',Arial,sans-serif">
+        <input type="email" placeholder="Email Address" style="flex:1;min-width:180px;padding:14px 16px;border:1px solid #d5d8e5;background:#fff;color:#333;font-size:15px;border-radius:8px;font-family:'Helvetica Neue',Arial,sans-serif">
+        <input type="tel" placeholder="Mobile Phone" style="flex:1;min-width:180px;padding:14px 16px;border:1px solid #d5d8e5;background:#fff;color:#333;font-size:15px;border-radius:8px;font-family:'Helvetica Neue',Arial,sans-serif">
+        <button type="submit" style="padding:14px 30px;background:#cca63e;color:#0c0f27;border:none;font:600 14px 'Montserrat';letter-spacing:.5px;cursor:pointer;border-radius:8px;transition:background .2s ease" style-hover="background:#e9d99e">Sign Me Up</button>
+      </form>
+      <p style="font-size:13px;color:#8f92ab;margin-top:14px;height:16px">{{ formMsg }}</p>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer style="background:#181e4e;color:#cfd1e0;padding:56px 40px 40px">
+    <div class="r-foot" style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:48px;align-items:start">
+      <div>
+        <img src="assets/logo_header.avif" alt="St. Joan of Arc" style="height:60px;margin-bottom:22px">
+        <p style="font-size:15px;line-height:1.8;color:#aab0d0;max-width:300px">A Catholic parish in Arvada, Colorado — leading souls to Christ the true King.</p>
+        <div style="display:flex;gap:16px;margin-top:22px">
+          <a href="#"><img src="assets/fb.png" alt="Facebook" style="width:24px;height:24px;filter:invert(1)"></a>
+          <a href="#"><img src="assets/youtube.png" alt="YouTube" style="width:24px;height:24px;filter:invert(1)"></a>
+          <a href="#"><img src="assets/instagram.png" alt="Instagram" style="width:24px;height:24px;filter:invert(1)"></a>
+        </div>
+      </div>
+      <div>
+        <p class="lbl" style="color:#e9d99e;margin-bottom:14px">OFFICE HOURS</p>
+        <p style="font-size:15px;line-height:1.9;color:#d7d9e6">Monday – Thursday<br>9:00 a.m. – 5:00 p.m.<br><span style="color:#8f92ab">closed 12:00 – 1:00 p.m.</span><br>Friday 9:00 a.m. – 12:00 p.m.</p>
+      </div>
+      <div>
+        <p class="lbl" style="color:#e9d99e;margin-bottom:14px">VISIT &amp; CONTACT</p>
+        <p style="font-size:15px;line-height:1.9;color:#d7d9e6">12735 W. 58th Ave.<br>Arvada, CO 80002<br><a href="mailto:office@stjoanarvada.org" style="color:#d2bd6d;text-decoration:underline">office@stjoanarvada.org</a><br><a href="tel:3034201232" style="color:#d2bd6d;text-decoration:underline">303-420-1232</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ GOLD ARCHDIOCESE BAR ============ -->
+  <div style="padding: 22px 40px; padding-top: 8px; padding-bottom: 8px; background-color: #181E4E; border-top: 1px solid rgba(255,255,255,.12)">
+    <div style="max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 24px">
+      <img src="assets/aod_denver.png" alt="Archdiocese of Denver" style="height:54px;filter:brightness(0) invert(1)">
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; font-size: 13px; color: #FFFFFF">
+        <a href="#" style="color: #FFFFFF; text-decoration: underline">Terms and Conditions</a>
+        <a href="#" style="color: #FFFFFF; text-decoration: underline">Privacy Policy</a>
+        <span>© 2026 St. Joan of Arc Catholic Church.</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { formMsg: '', openMenu: null, burgerOpen: false, drawerMenu: null };
+  componentDidMount() {
+    // sticky nav — translucent + blurred background after scrolling past the hero top
+    const bindNav = () => {
+      const nav = document.getElementById('jp-nav');
+      const inner = document.getElementById('jp-navinner');
+      if (!nav) { setTimeout(bindNav, 60); return; }
+      if (nav.__jpBound) return;
+      nav.__jpBound = true;
+      const scroller = nav.closest('[style*="overflow"]') || window;
+      const onScroll = () => {
+        const y = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        const s = y > 24;
+        nav.style.background = s ? 'rgba(12,15,39,0.82)' : 'rgba(12,15,39,0.55)';
+        nav.style.backdropFilter = 'blur(18px) saturate(1.4)';
+        nav.style.webkitBackdropFilter = 'blur(18px) saturate(1.4)';
+        nav.style.borderBottomColor = s ? 'rgba(255,255,255,0.16)' : 'rgba(255,255,255,0.10)';
+        nav.style.boxShadow = s ? '0 10px 30px rgba(0,0,0,0.28)' : '0 6px 20px rgba(0,0,0,0.18)';
+        if (inner) inner.style.padding = s ? '13px 40px' : '24px 40px';
+      };
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true, capture: true });
+      document.addEventListener('scroll', onScroll, { passive: true, capture: true });
+      window.addEventListener('resize', onScroll);
+      // responsive: collapse nav into burger when it no longer fits on one line
+      const links = document.getElementById('jp-navlinks');
+      const burger = document.getElementById('jp-burger');
+      const fit = () => {
+        if (!links || !burger) return;
+        const small = window.innerWidth < 1200;
+        links.style.display = small ? 'none' : 'flex';
+        burger.style.display = small ? 'flex' : 'none';
+        if (!small && this.state.burgerOpen) this.setState({ burgerOpen: false });
+      };
+      fit();
+      window.addEventListener('resize', fit);
+    };
+    bindNav();
+    const pre = document.getElementById('jp-pre');
+    const plogo = document.getElementById('jp-pre-logo');
+    const nav = document.getElementById('jp-nav-logo');
+    if (!pre || !plogo || !nav) return;
+    setTimeout(() => {
+      const navR = nav.getBoundingClientRect();
+      const plR = plogo.getBoundingClientRect();
+      const scale = navR.height / plR.height;
+      const dx = (navR.left + navR.width / 2) - (plR.left + plR.width / 2);
+      const dy = (navR.top + navR.height / 2) - (plR.top + plR.height / 2);
+      plogo.style.animation = 'none';
+      plogo.style.transform = 'translate(0px,0px) scale(1)';
+      void plogo.offsetWidth;
+      plogo.style.transition = 'transform 1100ms cubic-bezier(.65,0,.2,1)';
+      setTimeout(() => {
+        requestAnimationFrame(() => {
+          plogo.style.transform = 'translate(' + dx + 'px,' + dy + 'px) scale(' + scale + ')';
+        });
+      }, 550);
+      // fade only the navy backdrop (logo stays visible the whole time)
+      setTimeout(() => {
+        pre.style.transition = 'background-color 700ms ease';
+        pre.style.backgroundColor = 'rgba(12,15,39,0)';
+      }, 1000);
+      // once the logo has arrived, reveal the real nav logo underneath, then swap out the preloader
+      setTimeout(() => {
+        nav.style.visibility = 'visible';
+        plogo.style.opacity = '0';
+        setTimeout(() => { pre.style.display = 'none'; }, 80);
+      }, 1700);
+    }, 750);
+  }
+  renderVals() {
+    const menus = [
+      { label: 'ABOUT US', href: '#', menu: [
+        { label: 'Staff Directory', href: '#' },
+        { label: 'Contact Us', href: '#' },
+        { label: 'Forms', href: '#' },
+        { label: 'Administrative Services', href: '#' },
+        { label: 'Emergencies', href: '#' },
+        { label: 'Bulletin', href: '#' }
+      ] },
+      { label: 'WORSHIP', href: '#', menu: [
+        { label: 'Daily Worship', href: '#' },
+        { label: 'Sacraments', href: '#' },
+        { label: 'Perpetual Adoration', href: '#' },
+        { label: 'Special Worship & Occasions', href: '#' }
+      ] },
+      { label: 'FORMATION', href: '#', menu: [
+        { label: 'Adult Formation', href: '#' },
+        { label: "Children's Formation", href: '#' },
+        { label: 'Youth Ministry', href: '#' },
+        { label: 'Formed', href: '#' },
+        { label: 'Becoming Catholic', href: '#' },
+        { label: 'ELC', href: '#' }
+      ] },
+      { label: 'MINISTRIES', href: '#', menu: [] },
+      { label: 'CALENDAR', href: '#', menu: [] },
+      { label: 'OFFER', href: '#', menu: [
+        { label: 'Online Giving', href: '#' },
+        { label: 'Catholic Schools Fund', href: '#' }
+      ] },
+      { label: 'CATHOLIC CURIOUS', href: '#', menu: [] }
+    ];
+    const navItems = menus.map((m, i) => {
+      const open = this.state.openMenu === i && m.menu.length > 0;
+      const isCta = m.label === 'CATHOLIC CURIOUS';
+      return {
+        label: m.label,
+        href: m.href,
+        menu: m.menu,
+        hasMenu: m.menu.length > 0,
+        isCta,
+        isLink: !isCta,
+        open,
+        drawerPlain: m.menu.length === 0,
+        drawerOpen: this.state.drawerMenu === i,
+        chevRotate: this.state.drawerMenu === i ? 'rotate(180deg)' : 'rotate(0deg)',
+        onDrawerToggle: () => this.setState(s => ({ drawerMenu: s.drawerMenu === i ? null : i })),
+        color: open ? '#e9d99e' : '#ffffff',
+        onEnter: () => this.setState({ openMenu: i })
+      };
+    });
+    return {
+      navItems,
+      burgerOpen: this.state.burgerOpen,
+      drawerOpacity: this.state.burgerOpen ? '1' : '0',
+      drawerTransform: this.state.burgerOpen ? 'translateX(0)' : 'translateX(100%)',
+      drawerPointer: this.state.burgerOpen ? 'auto' : 'none',
+      toggleBurger: () => this.setState(s => ({ burgerOpen: !s.burgerOpen })),
+      closeMenu: () => this.setState({ openMenu: null }),
+      formMsg: this.state.formMsg,
+      onSubmit: (e) => { e.preventDefault(); this.setState({ formMsg: 'Thanks! Check your email to confirm.' }); }
+    };
+  }
+}
+</script>
+</body>
+</html>
