@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preload" as="image" href="assets/cc_prayer_1200.webp" media="(max-width: 860px)" fetchpriority="high">
+<link rel="preload" as="image" href="assets/cc_prayer_2400.webp" media="(min-width: 861px)" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:400;color:#2a2f45;background:#fff;-webkit-font-smoothing:antialiased}
+  a{color:#7a5f17;text-decoration:none}
+  a:hover{color:#181e4e}
+  h1,h2,h3,h4{font-family:'Montserrat',sans-serif;margin:0}
+  img{display:block;max-width:100%}
+  input,textarea,button{font-family:inherit}
+  @keyframes ccTitleIn{0%{opacity:0;transform:translateY(16px);letter-spacing:.06em;filter:blur(6px)}100%{opacity:1;transform:none;letter-spacing:-.01em;filter:blur(0)}}
+  @keyframes ccLeadIn{0%{opacity:0;transform:translateY(12px)}100%{opacity:1;transform:none}}
+  @media (prefers-reduced-motion: reduce){.cc-h1,.cc-lead{animation:none !important}}
+  summary{list-style:none;cursor:pointer}
+  summary::-webkit-details-marker{display:none}
+  details[open] .cc-chev{transform:rotate(180deg)}
+  :focus-visible{outline:3px solid #E9D99E;outline-offset:3px}
+  .trk [data-track]{outline:2px dashed #d6336c !important;outline-offset:3px;position:relative}
+  .trk [data-track]::after{content:attr(data-track);position:absolute;top:-24px;left:0;font:600 10px/1 ui-monospace,Menlo,monospace;background:#d6336c;color:#fff;padding:4px 6px;border-radius:3px;white-space:nowrap;z-index:50;pointer-events:none}
+  @media (max-width:860px){
+    .cc-pad{padding-left:22px !important;padding-right:22px !important}
+    .cc-sec{padding-top:64px !important;padding-bottom:64px !important}
+    .cc-navlinks{display:none !important}
+    .cc-hero{min-height:88vh !important;background:url('assets/cc_prayer_1200.webp') 58% center/cover no-repeat,url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAA0JCgsKCA0LCgsODg0PEyAVExISEyccHhcgLikxMC4pLSwzOko+MzZGNywtQFdBRkxOUlNSMj5aYVpQYEpRUk//2wBDAQ4ODhMREyYVFSZPNS01T09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0//wAARCAAVACADASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAABgACBAX/xAAqEAACAQMDAgUEAwAAAAAAAAABAgMABBEFEiEGQRMxUWHBIiMkcUJygf/EABYBAQEBAAAAAAAAAAAAAAAAAAIDBP/EABkRAAMBAQEAAAAAAAAAAAAAAAABEQIiMf/aAAwDAQACEQMRAD8AAWu551jUDLceVN+j4CupRy27rJbISJGzjDAcY9e3NDrD7d0juVCqee3mD3pNoGo2dnDcyK5ibCkJsO3hVUnIJPLE9ux57VLVpTEG2t9QS2F7bwx7SrLuOWxnnHp6A96x1VpkesWSFXEdxA3iRPtB/an2I+PPGKC9Qa9HdzE2xEuY1QnBDKQxJxkfNJZ9fs1VfyYCCOSJAceVHpN0fD8MXqTW0bsLTQztAOBpgGeP7e1G4rsWjNcR6dpxaSRgytHKVOCf4mTb/mOKqq0RMzPTRyX3UdyztHHYaVAMnd4Vkn1fvdmvPfVblxgpbAe1tGPiqqg0qJacP//Z') 58% center/cover no-repeat,#0c0f27 !important}
+    .cc-hero-shade{background:linear-gradient(180deg,rgba(9,12,32,.25) 0%,rgba(9,12,32,.55) 45%,rgba(9,12,32,.92) 100%) !important}
+    .cc-hero-in{justify-content:flex-end !important;padding-bottom:40px !important}
+    .cc-h1{font-size:46px !important}
+    .cc-h2{font-size:28px !important}
+    .cc-lead{font-size:18px !important}
+    .cc-g2,.cc-g3,.cc-g4{grid-template-columns:1fr !important}
+    .cc-btns{flex-direction:column !important;align-items:stretch !important}
+    .cc-btns a{justify-content:center !important}
+    .cc-trust{flex-direction:column !important;gap:10px !important}
+    .cc-steps-line{display:none !important}
+    .cc-person{grid-template-columns:1fr !important;text-align:left}
+    .cc-person img{width:120px !important;height:120px !important}
+    .cc-formcard{padding:28px 22px !important}
+    .cc-row2{grid-template-columns:1fr !important}
+    
+    .cc-quote{font-size:20px !important}
+    .cc-vid{max-width:300px !important;margin:0 auto !important}
+    .cc-sticky{display:flex !important}
+    .cc-foot{grid-template-columns:1fr !important;gap:30px !important}
+  }
+</style>
+</helmet>
+<div class="{{ rootClass }}" style="width:100%;overflow-x:hidden">
+
+  <!-- NAV -->
+  <header style="position:sticky;top:0;z-index:60;background:rgba(12,15,39,.86);backdrop-filter:blur(16px) saturate(1.4);border-bottom:1px solid rgba(255,255,255,.1)">
+    <div class="cc-pad" style="max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:14px 40px">
+      <a href="https://www.stjoanarvada.org" style="flex:none"><img src="assets/logo_header.avif" alt="St. Joan of Arc Catholic Church, Arvada" style="height:42px;width:auto"></a>
+      <nav class="cc-navlinks" style="display:flex;align-items:center;gap:28px">
+        <a href="https://www.stjoanarvada.org/about" style="color:#fff;font:600 13px 'Montserrat',sans-serif;letter-spacing:.8px" style-hover="color:#E9D99E">About Us</a>
+        <a href="https://www.stjoanarvada.org/worship" style="color:#fff;font:600 13px 'Montserrat',sans-serif;letter-spacing:.8px" style-hover="color:#E9D99E">Worship</a>
+        <a href="https://www.stjoanarvada.org/learn" style="color:#fff;font:600 13px 'Montserrat',sans-serif;letter-spacing:.8px" style-hover="color:#E9D99E">Formation</a>
+        <a href="https://www.stjoanarvada.org/event-list" style="color:#fff;font:600 13px 'Montserrat',sans-serif;letter-spacing:.8px" style-hover="color:#E9D99E">Calendar</a>
+      </nav>
+      <a href="#start" data-track="nav_start_conversation" style="flex:none;display:inline-flex;align-items:center;min-height:44px;padding:0 20px;background:#E9D99E;color:#181e4e;border-radius:999px;font:700 13px 'Montserrat',sans-serif;letter-spacing:.4px" style-hover="background:#f4ead0;color:#181e4e">Talk with us</a>
+    </div>
+  </header>
+
+  <!-- SEASONAL RIBBON (tweak) -->
+  <sc-if value="{{ isAdvent }}" hint-placeholder-val="{{ false }}">
+    <a href="#start" data-track="seasonal_ribbon" style="display:block;background:#4a2f6b;color:#fff;text-align:center;padding:12px 22px;font-size:15px;line-height:1.5">Advent begins November 29. A good season to bring your questions. <span style="color:#E9D99E;font-weight:700;text-decoration:underline">Let's talk</span></a>
+  </sc-if>
+  <sc-if value="{{ isLent }}" hint-placeholder-val="{{ false }}">
+    <a href="#start" data-track="seasonal_ribbon" style="display:block;background:#4a2f6b;color:#fff;text-align:center;padding:12px 22px;font-size:15px;line-height:1.5">Lent begins Ash Wednesday, February 10. Wondering what it's all about? <span style="color:#E9D99E;font-weight:700;text-decoration:underline">Ask us over coffee</span></a>
+  </sc-if>
+  <sc-if value="{{ isEaster }}" hint-placeholder-val="{{ false }}">
+    <a href="https://www.stjoanarvada.org/become-catholic" data-track="seasonal_ribbon" style="display:block;background:#f4eede;color:#181e4e;text-align:center;padding:12px 22px;font-size:15px;line-height:1.5">Thinking about becoming Catholic? Ask us how OCIA works and when the next group begins. <span style="color:#7a5f17;font-weight:700;text-decoration:underline">Learn more</span></a>
+  </sc-if>
+
+  <!-- HERO -->
+  <section class="cc-hero" style="position:relative;min-height:82vh;background:url('assets/cc_prayer_2400.webp') 62% center/cover no-repeat,url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAA0JCgsKCA0LCgsODg0PEyAVExISEyccHhcgLikxMC4pLSwzOko+MzZGNywtQFdBRkxOUlNSMj5aYVpQYEpRUk//2wBDAQ4ODhMREyYVFSZPNS01T09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0//wAARCAAVACADASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAABgACBAX/xAAqEAACAQMDAgUEAwAAAAAAAAABAgMABBEFEiEGQRMxUWHBIiMkcUJygf/EABYBAQEBAAAAAAAAAAAAAAAAAAIDBP/EABkRAAMBAQEAAAAAAAAAAAAAAAABEQIiMf/aAAwDAQACEQMRAD8AAWu551jUDLceVN+j4CupRy27rJbISJGzjDAcY9e3NDrD7d0juVCqee3mD3pNoGo2dnDcyK5ibCkJsO3hVUnIJPLE9ux57VLVpTEG2t9QS2F7bwx7SrLuOWxnnHp6A96x1VpkesWSFXEdxA3iRPtB/an2I+PPGKC9Qa9HdzE2xEuY1QnBDKQxJxkfNJZ9fs1VfyYCCOSJAceVHpN0fD8MXqTW0bsLTQztAOBpgGeP7e1G4rsWjNcR6dpxaSRgytHKVOCf4mTb/mOKqq0RMzPTRyX3UdyztHHYaVAMnd4Vkn1fvdmvPfVblxgpbAe1tGPiqqg0qJacP//Z') 62% center/cover no-repeat,#0c0f27;display:flex">
+    <div class="cc-hero-shade" style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(9,12,32,.82) 0%,rgba(9,12,32,.6) 60%,rgba(9,12,32,.45) 100%)"></div>
+    <div class="cc-pad cc-hero-in" style="position:relative;max-width:1280px;margin:0 auto;width:100%;padding:80px 40px;display:flex;flex-direction:column;justify-content:center">
+      <div style="max-width:680px;margin:0 auto;text-align:center">
+        <h1 class="cc-h1" style="font-size:68px;line-height:1.05;letter-spacing:-.01em;color:#E9D99E;font-weight:700;text-wrap:balance;animation:ccTitleIn 1.4s cubic-bezier(.2,.7,.2,1) .15s both">Catholic Curious</h1>
+        <p class="cc-lead" style="font-size:20px;line-height:1.6;color:#e8e9f2;margin-top:22px;text-wrap:pretty;animation:ccLeadIn 1.1s cubic-bezier(.2,.7,.2,1) .7s both">Let us buy you a coffee. Bring your questions, your doubts, or just your curiosity. We'll listen, and there's no commitment.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT IS CATHOLIC CURIOUS -->
+  <section id="what" class="cc-pad cc-sec" style="background:#fbfaf7;padding:104px 40px">
+    <div class="cc-g2" style="max-width:1080px;margin:0 auto;display:grid;grid-template-columns:340px minmax(0,1fr);gap:72px;align-items:center">
+      <div class="cc-vid" style="position:relative;width:100%;aspect-ratio:9/16;border-radius:24px;overflow:hidden;background:#181e4e;box-shadow:0 24px 60px rgba(24,30,78,.18)">
+        <video ref="{{ vidRef }}" src="assets/cc_video_sr.mp4" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ vidLoop }}" playsInline="{{ true }}" controls="{{ vidControls }}" preload="auto" onError="{{ onVideoError }}" aria-label="What is Catholic Curious video" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#181e4e"></video>
+        <sc-if value="{{ vidPreview }}" hint-placeholder-val="{{ true }}">
+          <button type="button" onClick="{{ onVidPlay }}" data-track="video_play_what_is_cc" aria-label="Play the video with sound" style="position:absolute;inset:0;width:100%;height:100%;border:none;padding:0;cursor:pointer;background:linear-gradient(180deg,rgba(12,15,39,.25),rgba(12,15,39,.55));display:flex;align-items:center;justify-content:center;transition:background .25s ease" style-hover="background:linear-gradient(180deg,rgba(12,15,39,.15),rgba(12,15,39,.45))">
+            <span style="display:flex;align-items:center;justify-content:center;width:76px;height:76px;border-radius:50%;background:#E9D99E;box-shadow:0 10px 30px rgba(0,0,0,.35)"><svg viewBox="0 0 24 24" width="30" height="30" fill="#181e4e" style="margin-left:3px"><path d="M8 5v14l11-7z"></path></svg></span>
+          </button>
+        </sc-if>
+        <sc-if value="{{ videoError }}" hint-placeholder-val="{{ false }}">
+          <div role="status" style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:28px;text-align:center;background:#181e4e">
+            <p style="font:600 15px 'Montserrat',sans-serif;color:#E9D99E">This video can't play in this browser</p>
+            <p style="font-size:14px;line-height:1.55;color:#c3c7dd">It needs to be exported as H.264 (MP4) to play everywhere.</p>
+          </div>
+        </sc-if>
+      </div>
+      <div>
+        <h2 class="cc-h2" style="font-size:38px;line-height:1.18;color:#181e4e;text-wrap:balance">What is <span style="color:#7a5f17">Catholic Curious</span>?</h2>
+        <p style="font-size:19px;line-height:1.7;color:#2a2f45;margin-top:20px;text-wrap:pretty">It's a simple invitation: sit down with someone from our parish over a cup of coffee and talk about whatever you've been wondering. There's no class to join and no program to sign up for. It's just a conversation.</p>
+        <p style="font-size:18px;line-height:1.65;color:#4a4f68;margin-top:18px">Bring any question, big or small. We'll bring the coffee.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section id="start" class="cc-pad cc-sec" style="background:#f6f3ea;padding:96px 40px;scroll-margin-top:70px">
+    <div style="max-width:720px;margin:0 auto 56px;text-align:center">
+      <p style="font:700 12px 'Montserrat',sans-serif;letter-spacing:2px;color:#7a5f17;margin-bottom:14px">START A CONVERSATION</p>
+          <h2 class="cc-h2" style="font-size:40px;line-height:1.15;color:#181e4e;text-wrap:balance">Let's talk over a cup of coffee.</h2>
+    </div>
+    <div class="cc-g2" style="max-width:1160px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:72px;align-items:start">
+      <div id="cc-quote" style="display:flex;flex-direction:column;gap:20px;align-self:start;padding-top:8px">
+        <svg id="cc-q-mark" viewBox="0 0 48 36" width="32" height="24" fill="#c9b46a" aria-hidden="true"><path d="M0 36V22C0 9 7 2 19 0l2 5c-7 2-10 6-10 12h9v19zm27 0V22c0-13 7-20 19-22l2 5c-7 2-10 6-10 12h9v19z"></path></svg>
+        <blockquote id="cc-q-text" class="cc-quote" style="font:italic 400 22px/1.6 'Helvetica Neue',Helvetica,Arial,sans-serif;color:#3a4060;text-wrap:pretty;max-width:440px">To <b>fall in love with God</b> is the greatest romance; <br><br>to seek him the greatest adventure; <br><br>to find him, the greatest human achievement.</blockquote>
+        <span id="cc-q-line" aria-hidden="true" style="display:block;width:56px;height:2px;background:#c9b46a;transform-origin:left center"></span>
+        <p id="cc-q-by" style="font:600 15px 'Montserrat',sans-serif;letter-spacing:.5px;color:#7a5f17;margin-top:-6px">St. Augustine</p>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:24px">
+        <div class="cc-formcard" style="background:#fff;border-radius:24px;padding:40px;box-shadow:0 20px 50px rgba(24,30,78,.08)">
+        <sc-if value="{{ isStep1 }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ onStep1 }}" onFocus="{{ onFormStart }}" data-track="form_step1_submit" style="display:flex;flex-direction:column;gap:20px">
+            <p style="font:700 12px 'Montserrat',sans-serif;letter-spacing:1.5px;color:#7a5f17">STEP 1 OF 2 · UNDER A MINUTE</p>
+            <div class="cc-row2" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px">
+              <label style="display:flex;flex-direction:column;gap:8px;font:600 15px 'Montserrat',sans-serif;color:#181e4e">Your name
+                <input name="name" required="" type="text" autocomplete="name" style="min-height:52px;padding:0 16px;border:1.5px solid #c9c6bb;border-radius:12px;font:400 17px 'Helvetica Neue',sans-serif;color:#2a2f45;background:#fff">
+              </label>
+              <label style="display:flex;flex-direction:column;gap:8px;font:600 15px 'Montserrat',sans-serif;color:#181e4e">Email
+                <input name="email" required="" type="email" autocomplete="email" style="min-height:52px;padding:0 16px;border:1.5px solid #c9c6bb;border-radius:12px;font:400 17px 'Helvetica Neue',sans-serif;color:#2a2f45;background:#fff">
+              </label>
+            </div>
+            <fieldset style="border:none;display:flex;flex-direction:column;gap:10px">
+              <legend style="font:600 15px 'Montserrat',sans-serif;color:#181e4e;margin-bottom:10px">How can we help?</legend>
+                <sc-for list="{{ helpOptions }}" as="o" hint-placeholder-count="3">
+                  <label style="display:flex;align-items:center;gap:14px;min-height:56px;padding:12px 16px;border:1.5px solid {{ o.border }};background:{{ o.bg }};border-radius:12px;cursor:pointer;font-size:16px;line-height:1.45;color:#2a2f45;transition:border-color .15s ease,background .15s ease">
+                    <input type="radio" name="help" value="{{ o.value }}" checked="{{ o.selected }}" onChange="{{ o.onSelect }}" style="width:20px;height:20px;accent-color:#181e4e;flex:none;margin:0">{{ o.label }}
+                  </label>
+                </sc-for>
+            </fieldset>
+            <button type="submit" style="min-height:56px;background:#181e4e;color:#fff;border:none;border-radius:999px;font:700 16px 'Montserrat',sans-serif;cursor:pointer;transition:background .2s ease" style-hover="background:#2a3170">Send my note</button>
+            <p style="display:flex;align-items:center;justify-content:center;gap:8px;font-size:15px;color:#2a2f45"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#7a5f17" stroke-width="2" style="flex:none"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Replies within one business day</p>
+            <p style="font-size:15px;color:#4a4f68;text-align:center">We only use your details to reply.</p>
+          </form>
+        </sc-if>
+        <sc-if value="{{ isStep2 }}" hint-placeholder-val="{{ false }}">
+          <div role="status" style="display:flex;gap:14px;align-items:flex-start;padding-bottom:24px;margin-bottom:24px;border-bottom:1px solid #ebe6d6">
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:#f4eede;flex:none"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#7a5f17" stroke-width="2.4"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>
+            <div>
+              <h3 style="font-size:22px;line-height:1.3;color:#181e4e">Thank you, {{ firstName }}. Your note is on its way to us.</h3>
+              <p style="font-size:16px;line-height:1.6;color:#4a4f68;margin-top:6px">We'll reply within one business day, usually sooner.</p>
+            </div>
+          </div>
+          <form onSubmit="{{ onStep2 }}" data-track="form_step2_submit" style="display:flex;flex-direction:column;gap:18px">
+            <p style="font:700 12px 'Montserrat',sans-serif;letter-spacing:1.5px;color:#7a5f17">STEP 2 OF 2 · OPTIONAL</p>
+            <p style="font-size:17px;line-height:1.55;color:#2a2f45">Want to tell us a little more? It helps us prepare, but it's completely up to you.</p>
+            <label style="display:flex;flex-direction:column;gap:8px;font:600 15px 'Montserrat',sans-serif;color:#181e4e"><span>Phone <span style="font-weight:500;color:#6a6f88">(if you'd rather we call or text)</span></span>
+              <input name="phone" type="tel" autocomplete="tel" style="min-height:52px;padding:0 16px;border:1.5px solid #c9c6bb;border-radius:12px;font:400 17px 'Helvetica Neue',sans-serif;color:#2a2f45;background:#fff">
+            </label>
+            <label style="display:flex;flex-direction:column;gap:8px;font:600 15px 'Montserrat',sans-serif;color:#181e4e">Anything you'd like us to know?
+              <textarea name="comments" rows="3" style="padding:14px 16px;border:1.5px solid #c9c6bb;border-radius:12px;font:400 17px/1.5 'Helvetica Neue',sans-serif;color:#2a2f45;resize:vertical;min-height:96px"></textarea>
+            </label>
+            <div style="display:flex;flex-wrap:wrap;gap:12px">
+              <button type="submit" style="flex:1;min-width:180px;min-height:52px;background:#181e4e;color:#fff;border:none;border-radius:999px;font:700 15px 'Montserrat',sans-serif;cursor:pointer" style-hover="background:#2a3170">Add these details</button>
+              <button type="button" onClick="{{ onSkip }}" data-track="form_step2_skip" style="flex:1;min-width:140px;min-height:52px;background:#fff;color:#181e4e;border:1.5px solid #181e4e;border-radius:999px;font:600 15px 'Montserrat',sans-serif;cursor:pointer" style-hover="background:#f6f3ea">I'm all set</button>
+            </div>
+          </form>
+        </sc-if>
+        <sc-if value="{{ isStep3 }}" hint-placeholder-val="{{ false }}">
+          <div role="status" style="text-align:center;padding:20px 0">
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;background:#f4eede;margin-bottom:20px"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#7a5f17" stroke-width="2.2"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>
+            <h3 style="font-size:26px;color:#181e4e">All set, {{ firstName }}.</h3>
+            <p style="font-size:18px;line-height:1.65;color:#4a4f68;margin:14px auto 0;max-width:420px">We'll be in touch within one business day. Keep an eye on your inbox.</p>
+            <p style="font-size:17px;line-height:1.6;color:#181e4e;margin-top:18px;font-style:italic">Know of our prayers for you on your journey.</p>
+            <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:28px">
+              <a href="#explore" data-track="confirm_watch_video" style="display:inline-flex;align-items:center;min-height:48px;padding:0 22px;background:#181e4e;color:#fff;border-radius:999px;font:600 14px 'Montserrat',sans-serif" style-hover="background:#2a3170;color:#fff">While you wait: a short video</a>
+              <a href="#evening" data-track="confirm_info_night" style="display:inline-flex;align-items:center;min-height:48px;padding:0 22px;border:1.5px solid #181e4e;color:#181e4e;border-radius:999px;font:600 14px 'Montserrat',sans-serif" style-hover="background:#f6f3ea;color:#181e4e">See Thursday nights</a>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- WHAT HAPPENS NEXT -->
+  <section id="how" class="cc-pad cc-sec" style="background:#fbfaf7;padding:96px 40px;scroll-margin-top:70px">
+    <div style="max-width:1160px;margin:0 auto">
+      <div style="text-align:center;max-width:640px;margin:0 auto 52px">
+        <p style="font:700 12px 'Montserrat',sans-serif;letter-spacing:2px;color:#7a5f17;margin-bottom:14px">WHAT HAPPENS IF I REACH OUT?</p>
+        <h2 class="cc-h2" style="font-size:36px;line-height:1.2;color:#181e4e">Three simple steps.</h2>
+      </div>
+      <div style="position:relative">
+        <div class="cc-steps-line" style="position:absolute;top:28px;left:16%;right:16%;height:1px;background:#d9cfae"></div>
+        <ol class="cc-g3" style="list-style:none;position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:36px">
+          <li style="text-align:center;display:flex;flex-direction:column;align-items:center">
+            <span style="display:flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;background:#181e4e;margin-bottom:20px"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#E9D99E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 3L10 14"></path><path d="M21 3l-7 18-4-7-7-4z"></path></svg></span>
+            <h3 style="font-size:20px;color:#181e4e;margin-bottom:10px">Send a short note</h3>
+            <p style="font-size:17px;line-height:1.6;color:#4a4f68;max-width:300px">Your name, email and anything you'd like to share. It takes about two minutes.</p>
+          </li>
+          <li style="text-align:center;display:flex;flex-direction:column;align-items:center">
+            <span style="display:flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;background:#181e4e;margin-bottom:20px"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#E9D99E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path><path d="M8.5 12h.01M12 12h.01M15.5 12h.01"></path></svg></span>
+            <h3 style="font-size:20px;color:#181e4e;margin-bottom:10px">We write back</h3>
+            <p style="font-size:17px;line-height:1.6;color:#4a4f68;max-width:300px">Usually within one business day, to find a time that works for you.</p>
+          </li>
+          <li style="text-align:center;display:flex;flex-direction:column;align-items:center">
+            <span style="display:flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;background:#181e4e;margin-bottom:20px"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#E9D99E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"></path><path d="M17 10h1.5a2.5 2.5 0 0 1 0 5H17"></path><path d="M8 3c-.6.8-.6 1.7 0 2.5M12 3c-.6.8-.6 1.7 0 2.5"></path></svg></span>
+            <h3 style="font-size:20px;color:#181e4e;margin-bottom:10px">Meet for coffee</h3>
+            <p style="font-size:17px;line-height:1.6;color:#4a4f68;max-width:300px">At a coffee shop near the church, on us. We'll hear your story and talk through your questions.</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORIES (placeholders until real testimonials arrive) -->
+  <section class="cc-pad cc-sec" style="background:#181e4e;padding:96px 40px">
+    <div style="max-width:1160px;margin:0 auto">
+      <p style="font:700 12px 'Montserrat',sans-serif;letter-spacing:2px;color:#E9D99E;margin-bottom:14px">STORIES</p>
+      <h2 class="cc-h2" style="font-size:36px;line-height:1.2;color:#fff;max-width:620px;margin-bottom:40px">From people who once asked the same questions.</h2>
+      <div class="cc-g3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px">
+        <sc-for list="{{ stories }}" as="s" hint-placeholder-count="3">
+          <figure style="background:#f6f3ea;border-radius:18px;padding:30px 28px;display:flex;flex-direction:column;gap:18px;min-height:200px">
+            <svg viewBox="0 0 48 36" width="32" height="24" fill="#c9b46a" aria-hidden="true"><path d="M0 36V22C0 9 7 2 19 0l2 5c-7 2-10 6-10 12h9v19zm27 0V22c0-13 7-20 19-22l2 5c-7 2-10 6-10 12h9v19z"></path></svg>
+            <blockquote style="font-size:18px;line-height:1.6;color:#2a2f45;flex:1">{{ s.quote }}</blockquote>
+            <figcaption style="font:700 15px 'Montserrat',sans-serif;color:#181e4e">{{ s.who }}</figcaption>
+          </figure>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFO NIGHT (secondary, lower commitment) -->
+  <section id="evening" class="cc-pad cc-sec" style="position:relative;background:#0c0f27;padding:96px 40px;scroll-margin-top:70px;overflow:hidden">
+    <div aria-hidden="true" style="position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1523582407565-efee5cf4a353?fm=jpg&q=70&w=2400&auto=format&fit=crop') center 40%/cover no-repeat"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,15,39,.94) 0%,rgba(12,15,39,.86) 45%,rgba(12,15,39,.62) 100%)"></div>
+    <a href="https://unsplash.com/@mdesign85?utm_source=st_joan_of_arc&utm_medium=referral" target="_blank" rel="noopener" style="position:absolute;right:16px;bottom:12px;z-index:2;font-size:12px;color:rgba(255,255,255,.7)" style-hover="color:#fff">Photo: MD Duran / Unsplash</a>
+    <div class="cc-g2" style="position:relative;max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center">
+      <div>
+        <p style="font:700 12px 'Montserrat',sans-serif;letter-spacing:2px;color:#E9D99E;margin-bottom:14px">PREFER A GROUP SETTING?</p>
+        <h2 class="cc-h2" style="font-size:38px;line-height:1.18;color:#fff">Catholic Curious Night</h2>
+        <p style="font-size:18px;line-height:1.65;color:#e8e9f2;margin-top:16px;max-width:520px">An open forum for questions about all things Catholic. A drop-in evening of open conversation. No obligations, no expectations, food provided.</p>
+      </div>
+      <div style="background:linear-gradient(135deg,rgba(255,255,255,.16),rgba(255,255,255,.05));-webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4);border:1px solid rgba(255,255,255,.22);border-radius:20px;padding:30px;box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 20px 50px rgba(0,0,0,.3)">
+        <p style="font:700 12px 'Montserrat',sans-serif;letter-spacing:1.5px;color:#E9D99E">NEXT EVENING</p>
+        <p style="font:700 24px/1.3 'Montserrat',sans-serif;color:#fff;margin-top:8px">{{ nextEvening }}</p>
+        <p style="font-size:17px;line-height:1.6;color:#e8e9f2;margin-top:6px">7:00 PM · Third Thursday of every month<br>St. Joan of Arc, 12735 W. 58th Ave., Arvada</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:22px">
+          <a href="{{ icsHref }}" download="catholic-curious-night.ics" data-track="info_night_add_calendar" style="display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 20px;background:#E9D99E;color:#181e4e;border-radius:999px;font:700 14px 'Montserrat',sans-serif" style-hover="background:#f4ead0;color:#181e4e"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="5" width="16" height="16" rx="2"></rect><path d="M4 10h16M8 3v4M16 3v4"></path></svg>Add to calendar</a>
+          <a href="https://maps.google.com/?q=12735+W+58th+Ave,+Arvada,+CO+80002" target="_blank" rel="noopener" data-track="info_night_directions" style="display:inline-flex;align-items:center;min-height:48px;padding:0 20px;border:1.5px solid rgba(255,255,255,.7);color:#fff;border-radius:999px;font:600 14px 'Montserrat',sans-serif" style-hover="background:rgba(255,255,255,.1);color:#fff">Get directions</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPLORE -->
+  <section id="explore" class="cc-pad cc-sec" style="background:#f6f3ea;padding:96px 40px;scroll-margin-top:70px">
+    <div style="max-width:1160px;margin:0 auto">
+      <p style="font:700 12px 'Montserrat',sans-serif;letter-spacing:2px;color:#7a5f17;margin-bottom:14px">NOT READY TO TALK YET?</p>
+      <h2 class="cc-h2" style="font-size:36px;line-height:1.2;color:#181e4e;margin-bottom:12px">Start with a short video.</h2>
+      <p style="font-size:18px;line-height:1.65;color:#4a4f68;max-width:620px;margin-bottom:36px">We recommend anything by Fr. Mike Schmitz and Ascension Presents.</p>
+      <div class="cc-g2" style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+        <sc-for list="{{ videos }}" as="v">
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <div style="position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:#0c0f27">
+              <sc-if value="{{ v.playing }}" hint-placeholder-val="{{ false }}">
+                <iframe src="{{ v.embed }}" title="{{ v.title }}" style="position:absolute;inset:0;width:100%;height:100%;border:0" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen=""></iframe>
+              </sc-if>
+              <sc-if value="{{ v.idle }}" hint-placeholder-val="{{ false }}">
+                <button onClick="{{ v.onPlay }}" data-track="{{ v.track }}" aria-label="Play: {{ v.title }}" style="position:absolute;inset:0;width:100%;height:100%;border:none;padding:0;cursor:pointer;background:#0c0f27">
+                  <span aria-hidden="true" style="position:absolute;inset:0;background-image:{{ v.thumbBg }};background-size:cover;background-position:center;opacity:.85"></span>
+                  <span style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;width:72px;height:72px;border-radius:50%;background:#E9D99E;box-shadow:0 8px 24px rgba(0,0,0,.35)"><svg viewBox="0 0 24 24" width="28" height="28" fill="#181e4e"><path d="M8 5v14l11-7z"></path></svg></span>
+                </button>
+              </sc-if>
+            </div>
+            <div>
+              <h3 style="font-size:19px;line-height:1.35;color:#181e4e">{{ v.title }}</h3>
+              <p style="font-size:16px;line-height:1.55;color:#4a4f68;margin-top:4px">{{ v.desc }}</p>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="cc-pad cc-sec" style="background:#fbfaf7;padding:96px 40px">
+    <div style="max-width:820px;margin:0 auto">
+      <p style="font:700 12px 'Montserrat',sans-serif;letter-spacing:2px;color:#7a5f17;margin-bottom:14px">IS THERE ANY COMMITMENT?</p>
+      <h2 class="cc-h2" style="font-size:36px;line-height:1.2;color:#181e4e;margin-bottom:34px">None. Here's what people usually ask.</h2>
+      <div style="border-top:1px solid #e6e1d2">
+        <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="5">
+          <details data-track="{{ f.track }}" style="border-bottom:1px solid #e6e1d2">
+            <summary style="display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 0;min-height:44px">
+              <span style="font:600 18px/1.4 'Montserrat',sans-serif;color:#181e4e">{{ f.q }}</span>
+              <svg class="cc-chev" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#7a5f17" stroke-width="2" style="flex:none;transition:transform .25s ease"><path d="M6 9l6 6 6-6"></path></svg>
+            </summary>
+            <div style="padding:0 0 24px;font-size:17px;line-height:1.7;color:#4a4f68;max-width:680px">
+              <p>{{ f.a }}</p>
+              <sc-if value="{{ f.hasLink }}" hint-placeholder-val="{{ false }}">
+                <a href="{{ f.href }}" data-track="{{ f.linkTrack }}" style="display:inline-flex;align-items:center;gap:6px;margin-top:12px;font:700 15px 'Montserrat',sans-serif;text-decoration:underline;text-underline-offset:4px">{{ f.linkLabel }}</a>
+              </sc-if>
+            </div>
+          </details>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="cc-pad" style="background:#181e4e;color:#d7d9e6;padding:56px 40px 44px">
+    <div class="cc-foot" style="max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:44px">
+      <div>
+        <img src="assets/logo_header.avif" alt="St. Joan of Arc" style="height:48px;width:auto;margin-bottom:18px">
+        <p style="font-size:15px;line-height:1.7">12735 W. 58th Ave.<br>Arvada, CO 80002</p>
+      </div>
+      <div>
+        <p style="font:700 12px 'Montserrat',sans-serif;letter-spacing:1.5px;color:#E9D99E;margin-bottom:12px">PARISH OFFICE</p>
+        <p style="font-size:15px;line-height:1.8">Monday – Thursday, 9:00 a.m. – 5:00 p.m.<br>(closed 12:00 – 1:00 p.m.)<br>Friday, 9:00 a.m. – 12:00 p.m.</p>
+      </div>
+      <div>
+        <p style="font:700 12px 'Montserrat',sans-serif;letter-spacing:1.5px;color:#E9D99E;margin-bottom:12px">CONTACT</p>
+        <p style="font-size:15px;line-height:1.8"><a href="tel:+13034201232" data-track="footer_tel_call" style="color:#fff;text-decoration:underline">303-420-1232</a><br><a href="mailto:office@stjoanarvada.org" data-track="footer_email_link" style="color:#fff;text-decoration:underline">office@stjoanarvada.org</a></p>
+      </div>
+    </div>
+  </footer>
+  <div class="cc-pad" style="background:#c2a24e;padding:20px 40px">
+    <div style="max-width:1160px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px">
+      <img src="assets/aod_denver.png" alt="Archdiocese of Denver" style="height:48px;width:auto;filter:brightness(0) saturate(100%)">
+      <span style="font-size:13px;color:#181e4e">© 2026 St. Joan of Arc Catholic Church</span>
+    </div>
+  </div>
+
+  <!-- STICKY MOBILE CTA -->
+  <div class="cc-sticky" style="display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:70;gap:10px;padding:8px;background:rgba(12,15,39,.94);backdrop-filter:blur(12px);border-radius:999px;box-shadow:0 12px 30px rgba(0,0,0,.3);transition:transform .35s ease,opacity .35s ease;transform:{{ stickyTransform }};opacity:{{ stickyOpacity }};pointer-events:{{ stickyPointer }}">
+    <a href="#start" data-track="sticky_start_conversation" style="flex:1;display:flex;align-items:center;justify-content:center;min-height:48px;background:#E9D99E;color:#181e4e;border-radius:999px;font:700 15px 'Montserrat',sans-serif">Start a conversation</a>
+    <a href="tel:+13034201232" data-track="sticky_tel_call" aria-label="Call the parish office" style="display:flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;border:1.5px solid rgba(255,255,255,.6);color:#fff;flex:none"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg></a>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;season&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;none&quot;,&quot;advent&quot;,&quot;lent&quot;,&quot;easter&quot;],&quot;default&quot;:&quot;none&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;showTracking&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Handoff&quot;}}">
+class Component extends DCLogic {
+  vidRef = React.createRef();
+  state = { vidPreview: true, help: '', step: 1, firstName: '', playing: {}, sticky: false, started: false };
+
+  componentDidMount() {
+    this._revealQuote();
+    this._bootPreview();
+    this._onScroll = () => {
+      const form = document.getElementById('start');
+      const r = form ? form.getBoundingClientRect() : null;
+      const formInView = r && r.top < window.innerHeight && r.bottom > 0;
+      const s = window.scrollY > window.innerHeight * 0.7 && !formInView;
+      if (s !== this.state.sticky) this.setState({ sticky: s });
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+  }
+  _bootPreview() {
+    const v = this.vidRef && this.vidRef.current;
+    if (!v) { setTimeout(() => this._bootPreview(), 80); return; }
+    v.muted = true; v.defaultMuted = true;
+    const p = v.play(); if (p && p.catch) p.catch(() => {});
+  }
+
+  _revealQuote() {
+    const ids = ['cc-q-mark','cc-q-text','cc-q-line','cc-q-by'];
+    const els = ids.map(id => document.getElementById(id));
+    const sec = document.getElementById('cc-quote');
+    if (!sec || els.some(e => !e)) { setTimeout(() => this._revealQuote(), 80); return; }
+    if (sec.__revealBound) return; sec.__revealBound = true;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+    const delays = [0, 200, 700, 850];
+    const ease = 'cubic-bezier(.2,.7,.2,1)';
+    els.forEach((el, i) => {
+      el.style.opacity = '0';
+      el.style.transform = i === 2 ? 'scaleX(0)' : 'translateY(18px)';
+      if (i === 1) el.style.filter = 'blur(6px)';
+      el.style.transition = 'opacity 1.3s ' + ease + ' ' + delays[i] + 'ms, transform 1.3s ' + ease + ' ' + delays[i] + 'ms, filter 1.3s ease ' + delays[i] + 'ms';
+    });
+    const io = new IntersectionObserver((ents) => {
+      if (!ents.some(e => e.isIntersecting)) return;
+      els.forEach((el, i) => { el.style.opacity = '1'; el.style.transform = i === 2 ? 'scaleX(1)' : 'translateY(0)'; el.style.filter = 'none'; });
+      io.disconnect();
+    }, { threshold: 0.35 });
+    io.observe(sec);
+  }
+
+  componentWillUnmount() { window.removeEventListener('scroll', this._onScroll); }
+
+  track(name, detail) {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(Object.assign({ event: name }, detail || {}));
+  }
+
+  goToForm(help) {
+    this.setState({ help });
+    const el = document.getElementById('start');
+    if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 70, behavior: 'smooth' });
+  }
+
+  nextEvening() {
+    const thirdThu = (y, m) => { const d = new Date(y, m, 1); const off = (4 - d.getDay() + 7) % 7; return new Date(y, m, 1 + off + 14, 19, 0); };
+    const now = new Date();
+    let t = thirdThu(now.getFullYear(), now.getMonth());
+    if (t < now) t = thirdThu(now.getFullYear(), now.getMonth() + 1);
+    return t;
+  }
+
+  renderVals() {
+    const _vErr = !!this.state.videoError;
+    const season = this.props.season ?? 'none';
+    const help = this.state.help;
+    const opts = [
+      { value: 'coffee', label: "I'd like to chat over coffee. Not quite sure what else I want." },
+      { value: 'questions', label: 'I have some questions about the Catholic Church.' },
+      { value: 'become', label: 'I want to become Catholic!' }
+    ];
+    const t = this.nextEvening();
+    const p2 = n => String(n).padStart(2, '0');
+    const stamp = `${t.getFullYear()}${p2(t.getMonth() + 1)}${p2(t.getDate())}T190000`;
+    const ics = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//St Joan of Arc//Catholic Curious//EN','BEGIN:VEVENT',
+      `UID:cc-night-${stamp}@stjoanarvada.org`,`DTSTART:${stamp}`,'RRULE:FREQ=MONTHLY;BYDAY=3TH',
+      'SUMMARY:Catholic Curious Night','LOCATION:St. Joan of Arc\\, 12735 W. 58th Ave.\\, Arvada\\, CO 80002',
+      'DESCRIPTION:An open forum for questions about all things Catholic. No obligations\\, food provided.','END:VEVENT','END:VCALENDAR'].join('\r\n');
+    const sticky = this.state.sticky;
+    return {
+      videoError: _vErr, onVideoError: () => this.setState({ videoError: true }),
+      vidRef: this.vidRef, vidPreview: this.state.vidPreview, vidLoop: this.state.vidPreview, vidControls: !this.state.vidPreview,
+      onVidPlay: () => {
+        const v = this.vidRef.current; if (!v) return;
+        if (this.track) this.track('video_play', { video: 'what_is_catholic_curious' });
+        v.loop = false; v.currentTime = 0; v.muted = false; v.defaultMuted = false;
+        this.setState({ vidPreview: false }, () => { const p = v.play(); if (p && p.catch) p.catch(() => {}); });
+      },
+      rootClass: this.props.showTracking ? 'trk' : '',
+      isAdvent: season === 'advent', isLent: season === 'lent', isEaster: season === 'easter',
+      personas: [
+        { title: "I'm just curious", body: 'Something about the Church caught your attention and you would like to understand it better.', help: 'coffee', track: 'persona_curious' },
+        { title: 'I have questions or doubts', body: 'About God, the Church, its history or its teaching. Hard questions are welcome.', help: 'questions', track: 'persona_questions' },
+        { title: "I've been away for a while", body: 'Maybe for years. You would like to see what coming back could look like.', help: 'coffee', track: 'persona_returning' },
+        { title: "I'm thinking about becoming Catholic", body: 'You would like to know what the path looks like and where to begin.', help: 'become', track: 'persona_become' }
+      ].map(p => Object.assign({}, p, { onPick: () => { this.track('persona_select', { persona: p.track }); this.goToForm(p.help); } })),
+      stories: [
+        { quote: "“I hadn't been inside a church in fifteen years and expected a lecture. Instead they asked about my life and let me ask everything I'd been carrying around. I left with more questions, but the good kind.”", who: 'Daniel' },
+        { quote: "“I'm not religious and told him so right away. He didn't flinch. We talked for an hour about suffering, science and why anyone believes at all. No pressure, just honest answers.”", who: 'Priya' },
+        { quote: "“My fiancé is Catholic and I wanted to understand his faith before our wedding. One coffee turned into a few more. This Easter I was received into the Church.”", who: 'Megan' }
+      ],
+      faqs: [
+        { q: 'Do I have to be Catholic, or even believe in God, to reach out?', a: "No. Many people who write to us aren't Catholic, aren't sure what they believe, or aren't religious at all. You're welcome exactly as you are.", track: 'faq_believe' },
+        { q: 'Will this sign me up for anything?', a: "No. A conversation is just a conversation. We won't add you to a list or follow up unless you'd like us to.", track: 'faq_commitment' },
+        { q: "I was raised Catholic but haven't been in years. Is this for me?", a: 'Yes. Many people come back after a long time away, often with questions. We would be glad to talk.', track: 'faq_returning' },
+        { q: 'What if I want to become Catholic?', a: "Wonderful. We'll walk you through the process, called OCIA, at your own pace.", track: 'faq_become', hasLink: true, href: 'https://www.stjoanarvada.org/become-catholic', linkLabel: 'How to become Catholic', linkTrack: 'faq_link_become_catholic' },
+        { q: 'What about Baptism for me or my child?', a: 'We can help with that too, and a coffee is a good place to start.', track: 'faq_baptism', hasLink: true, href: 'https://www.stjoanarvada.org/baptism', linkLabel: 'About Baptism', linkTrack: 'faq_link_baptism' }
+      ].map(f => Object.assign({ hasLink: false }, f)),
+      helpOptions: opts.map(o => ({
+        ...o, selected: help === o.value,
+        border: help === o.value ? '#181e4e' : '#dcd8cc', bg: help === o.value ? '#f6f3ea' : '#fff',
+        onSelect: () => this.setState({ help: o.value })
+      })),
+      isStep1: this.state.step === 1, isStep2: this.state.step === 2, isStep3: this.state.step === 3, firstName: this.state.firstName,
+      onFormStart: () => { if (!this.state.started) { this.track('form_start', { form: 'catholic_curious' }); this.setState({ started: true }); } },
+      onStep1: (e) => {
+        e.preventDefault();
+        const full = (e.target.elements.name.value || '').trim();
+        this.track('generate_lead', { form: 'catholic_curious', help: help || 'unspecified' });
+        this.setState({ step: 2, firstName: full.split(' ')[0] || 'friend' });
+      },
+      onStep2: (e) => { e.preventDefault(); this.track('form_details_added', { form: 'catholic_curious' }); this.setState({ step: 3 }); },
+      onSkip: () => { this.track('form_details_skipped', { form: 'catholic_curious' }); this.setState({ step: 3 }); },
+      nextEvening: t.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' }),
+      icsHref: 'data:text/calendar;charset=utf-8,' + encodeURIComponent(ics),
+      videos: [
+        { id: 'jJCbCs-y1_k', title: 'Why Be Catholic and Not Just Christian?', desc: 'Ascension Presents. Short and to the point.', track: 'video_play_why_catholic' },
+        { id: '8F7eIrh80V8', title: '7 Reasons Why Everyone Should Be Catholic', desc: 'A longtime philosophy professor gives a simple, engaging talk.', track: 'video_play_7_reasons' }
+      ].map(v => ({
+        ...v, thumbBg: `url(https://i.ytimg.com/vi/${v.id}/hqdefault.jpg)`,
+        embed: `https://www.youtube-nocookie.com/embed/${v.id}?autoplay=1&rel=0`,
+        playing: !!this.state.playing[v.id], idle: !this.state.playing[v.id],
+        onPlay: () => { this.track('video_play', { video: v.id }); this.setState(s => ({ playing: { ...s.playing, [v.id]: true } })); }
+      })),
+      stickyTransform: sticky ? 'translateY(0)' : 'translateY(140%)',
+      stickyOpacity: sticky ? 1 : 0,
+      stickyPointer: sticky ? 'auto' : 'none'
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+{
+  "v": 1,
+  "mode": "omelette",
+  "root": "project/",
+  "title": "St Joan of Arc Church website",
+  "entry": "Catholic Curious B - Wix Studio.dc.html",
+  "pages": [
+    {
+      "path": "Catholic Curious B - Wix Studio.dc.html",
+      "title": "Catholic Curious B - Wix Studio",
+      "kind": "page"
+    },
+    {
+      "path": "Catholic Curious A - Ideal.dc.html",
+      "title": "Catholic Curious A - Ideal",
+      "kind": "page"
+    },
+    {
+      "path": "Catholic Curious - Review.dc.html",
+      "title": "Catholic Curious - Review",
+      "kind": "page"
+    },
+    {
+      "path": "St Joan of Arc - Catholic Curious.dc.html",
+      "title": "St Joan of Arc - Catholic Curious",
+      "kind": "page"
+    },
+    {
+      "path": "St Joan of Arc - Redesign Home Airy.dc.html",
+      "title": "St Joan of Arc - Redesign Home Airy",
+      "kind": "page"
+    },
+    {
+      "path": "St Joan of Arc - Coffee CTA Hover Options.dc.html",
+      "title": "St Joan of Arc - Coffee CTA Hover Options",
+      "kind": "page"
+    },
+    {
+      "path": "St Joan of Arc - Catholic Curious Options.dc.html",
+      "title": "St Joan of Arc - Catholic Curious Options",
+      "kind": "page"
+    },
+    {
+      "path": "St Joan of Arc - Redesign Home.dc.html",
+      "title": "St Joan of Arc - Redesign Home",
+      "kind": "page"
+    },
+    {
+      "path": "St Joan of Arc - Redesign.dc.html",
+      "title": "St Joan of Arc - Redesign",
+      "kind": "page"
+    },
+    {
+      "path": "St Joan of Arc - Home.dc.html",
+      "title": "St Joan of Arc - Home",
+      "kind": "page"
+    },
+    {
+      "path": "uploads/Catholic Curious _ St. Joan of Arc.html",
+      "title": "Catholic Curious | St. Joan of Arc",
+      "kind": "plain"
+    },
+    {
+      "path": "uploads/St. Joan of Arc Catholic Church _ Arvada, CO.html",
+      "title": "St. Joan of Arc Catholic Church | Arvada, CO",
+      "kind": "plain"
+    },
+    {
+      "path": "uploads/Catholic Curious _ St. Joan of Arc_files/7ce952_9cbe986c6dd3038e3c9276c7a9ae47dc.html",
+      "title": "Flocknote Signup",
+      "kind": "plain"
+    }
+  ],
+  "migratorVersion": "artifact-migrator (claude-design-backend ed667f7ac9c1)",
+  "createdAt": "2026-11-05T18:19:35.289Z",
+  "source": {
+    "v": 1,
+    "app": "claude-design",
+    "url": "https://claude.ai/design/p/a35eae6f-540c-4356-9d8c-8eede990a778",
+    "projectId": "a35eae6f-540c-4356-9d8c-8eede990a778",
+    "exportedAt": "2026-11-05T18:19:35.289Z"
+  },
+  "report": {
+    "itemsVersion": 2,
+    "pages": {
+      "total": 13,
+      "ok": 6,
+      "partial": 7,
+      "notMigrated": 0
+    },
+    "items": [
+      {
+        "kind": "external_blocked",
+        "path": "Catholic Curious A - Ideal.dc.html",
+        "text": "https://www.stjoanarvada.org/become-catholic\nhttps://images.unsplash.com/photo-1523582407565-efee5cf4a353?fm=jpg&q=70&w=2400&auto=format&fit=crop\nhttps://www.stjoanarvada.org/baptism\nhttps://i.ytimg.com/vi/${v.id}/hqdefault.jpg"
+      },
+      {
+        "kind": "external_blocked",
+        "path": "Catholic Curious B - Wix Studio.dc.html",
+        "text": "https://www.stjoanarvada.org/become-catholic\nhttps://images.unsplash.com/photo-1523582407565-efee5cf4a353?fm=jpg&q=70&w=2400&auto=format&fit=crop\nhttps://www.stjoanarvada.org/baptism"
+      },
+      {
+        "kind": "external_blocked",
+        "path": "St Joan of Arc - Catholic Curious.dc.html",
+        "text": "https://www.youtube-nocookie.com/embed/jJCbCs-y1_k\nhttps://www.youtube-nocookie.com/embed/8F7eIrh80V8"
+      },
+      {
+        "kind": "external_blocked",
+        "path": "St Joan of Arc - Home.dc.html",
+        "text": "https://www.stjoanarvada.org/catholic-curious\nhttps://www.stjoanarvada.org/welcome\nhttps://www.stjoanarvada.org/worship\nhttps://www.stjoanarvada.org/faith-formation\nhttps://www.stjoanarvada.org/ministries\nand 4 more addresses"
+      },
+      {
+        "kind": "external_blocked",
+        "path": "uploads/Catholic Curious _ St. Joan of Arc_files/7ce952_9cbe986c6dd3038e3c9276c7a9ae47dc.html",
+        "text": "https://app.flocknote.com/group/34692/addToGroupFromOutside"
+      },
+      {
+        "kind": "external_blocked",
+        "path": "uploads/Catholic Curious _ St. Joan of Arc.html",
+        "text": "https://static.wixstatic.com/media/92cbc0_e1b77e0783204428a8e960076d8221a2%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/92cbc0_e1b77e0783204428a8e960076d8221a2%7Emv2.png\nhttps://static.wixstatic.com/media/92cbc0_e1b77e0783204428a8e960076d8221a2%7Emv2.png/v1/fill/w_32%2Ch_32%2Clg_1%2Cusm_0.66_1.00_0.01/92cbc0_e1b77e0783204428a8e960076d8221a2%7Emv2.png\nhttps://static.wixstatic.com/media/92cbc0_e1b77e0783204428a8e960076d8221a2%7Emv2.png/v1/fill/w_180%2Ch_180%2Clg_1%2Cusm_0.66_1.00_0.01/92cbc0_e1b77e0783204428a8e960076d8221a2%7Emv2.png\nhttps://static.parastorage.com/unpkg/@formatjs/intl-segmenter@11.7.10/polyfill.iife.js\nhttps://static.parastorage.com/services/wix-thunderbolt/dist/handleAccessTokens.inline.81d46a84.bundle.min.js\nand 97 more addresses"
+      },
+      {
+        "kind": "external_blocked",
+        "path": "uploads/St. Joan of Arc Catholic Church _ Arvada, CO.html",
+        "text": "https://static.wixstatic.com/media/92cbc0_e1b77e0783204428a8e960076d8221a2%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/92cbc0_e1b77e0783204428a8e960076d8221a2%7Emv2.png\nhttps://static.wixstatic.com/media/92cbc0_e1b77e0783204428a8e960076d8221a2%7Emv2.png/v1/fill/w_32%2Ch_32%2Clg_1%2Cusm_0.66_1.00_0.01/92cbc0_e1b77e0783204428a8e960076d8221a2%7Emv2.png\nhttps://static.wixstatic.com/media/92cbc0_e1b77e0783204428a8e960076d8221a2%7Emv2.png/v1/fill/w_180%2Ch_180%2Clg_1%2Cusm_0.66_1.00_0.01/92cbc0_e1b77e0783204428a8e960076d8221a2%7Emv2.png\nhttps://static.parastorage.com/unpkg/@formatjs/intl-segmenter@11.7.10/polyfill.iife.js\nhttps://static.parastorage.com/services/wix-thunderbolt/dist/handleAccessTokens.inline.3250797b.bundle.min.js\nand 94 more addresses"
+      },
+      {
+        "kind": "external_blocked",
+        "path": "uploads/Catholic Curious _ St. Joan of Arc_files/bundle.tracing.es5.min.js",
+        "text": "http://www.example.com"
+      },
+      {
+        "kind": "external_blocked",
+        "path": "uploads/Catholic Curious _ St. Joan of Arc_files/minified.js",
+        "text": "https://a@b\nhttp://тест\nhttp://a#б"
+      },
+      {
+        "kind": "external_blocked",
+        "path": "uploads/Catholic Curious _ St. Joan of Arc_files/rb_wixui.thunderbolt[VideoPlayer].4c6fa245.bundle.min.js",
+        "text": "https://player.twitch.tv/js/embed/v1.js\nhttps://vimeo.com/api/oembed.json?url=\nhttps://www.youtube.com/iframe_api\nhttps://geo.dailymotion.com/libs/player.js"
+      },
+      {
+        "kind": "external_blocked",
+        "path": "uploads/Catholic Curious _ St. Joan of Arc_files/thunderbolt-commons.5a99627c.bundle.min.js",
+        "text": "https://sled.wix.dev\nhttps://localhost\nhttp://localhost"
+      }
+    ],
+    "truncated": 0,
+    "truncatedLeftOut": 0
+  }
+}

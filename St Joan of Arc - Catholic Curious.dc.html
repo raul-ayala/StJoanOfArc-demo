@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Nunito Sans','Helvetica Neue',Arial,sans-serif;font-weight:300;color:#242526;background:#fff;-webkit-font-smoothing:antialiased}
+  a{color:#242526;text-decoration:none}
+  a:hover{color:#bc9507}
+  img{display:block;max-width:100%}
+  input,textarea,button{font-family:inherit}
+</style>
+</helmet>
+<div style="width:100%;overflow-x:hidden">
+
+  <!-- HEADER -->
+  <header style="background:#181e4e;width:100%">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:30px;padding:28px 28px 18px 20px">
+      <a href="https://www.stjoanarvada.org" style="flex:none;margin-top:22px"><img src="assets/logo_header.avif" alt="St. Joan of Arc Catholic Church | Arvada" style="height:52px;width:auto"></a>
+      <nav style="display:flex;flex-wrap:wrap;justify-content:flex-end;align-items:center;gap:24px 30px;max-width:780px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:11.5px;letter-spacing:.2px">
+        <a href="https://www.stjoanarvada.org/about" style="color:#fff" style-hover="color:#e9d99e">WELCOME</a>
+        <a href="https://www.stjoanarvada.org/worship" style="color:#fff" style-hover="color:#e9d99e">WORSHIP</a>
+        <a href="https://www.stjoanarvada.org/learn" style="color:#fff" style-hover="color:#e9d99e">FAITH FORMATION</a>
+        <a href="https://www.stjoanarvada.org/ministries" style="color:#fff" style-hover="color:#e9d99e">MINISTRIES</a>
+        <a href="https://www.stjoanarvada.org/catholic-curious" aria-current="page" style="color:#bc9507">CATHOLIC CURIOUS</a>
+        <a href="https://www.stjoanarvada.org/event-list" style="color:#fff" style-hover="color:#e9d99e">CALENDAR</a>
+        <a href="https://www.stjoanarvada.org/offer" style="color:#fff" style-hover="color:#e9d99e">OFFER</a>
+        <a href="https://www.stjoanarvada.org/elc" style="color:#fff" style-hover="color:#e9d99e">ELC</a>
+        <a href="https://www.blastercatholic.org/" style="color:#fff" style-hover="color:#e9d99e">BLASTER CATHOLIC</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section style="position:relative;width:100%;min-height:245px;background:linear-gradient(rgba(36,40,92,.62),rgba(36,40,92,.62)),url('assets/cc_crucifix.webp') center 20%/cover no-repeat;display:flex;align-items:center;justify-content:center;text-align:center">
+    <div style="padding:50px 30px">
+      <h1 style="font-family:'Nunito Sans',sans-serif;font-weight:300;font-size:38px;letter-spacing:9px;color:#fff;margin-bottom:20px">CATHOLIC CURIOUS</h1>
+      <p style="font-size:14px;line-height:1.6;color:#d2bd6d;font-weight:400">“To fall in love with God is the greatest romance; to seek him the greatest adventure; to find him, the greatest human achievement.”</p>
+      <p style="font-size:14px;color:#fff;margin-top:6px;font-weight:400">~ St. Augustine ~</p>
+    </div>
+  </section>
+
+  <!-- BANNER -->
+  <section style="background:#181e4e;display:flex;justify-content:center">
+    <img src="assets/cc_banner.png" alt="Catholic Curious: an open forum for questions about all things Catholic. Join us for a pressure-free, drop-in evening of open conversation. No obligations, no expectations, food provided. 3rd Thursdays of the month at 7:00 PM" style="width:78%;max-width:1000px;height:auto">
+  </section>
+
+  <!-- BODY COPY -->
+  <section style="background:#fff;padding:70px 30px 64px">
+    <div style="max-width:880px;margin:0 auto;font-size:16px;line-height:1.6;color:#242526;font-weight:400">
+      <p>Are you curious about the Catholic Church? Has your hunger for God, for truth, goodness, and beauty found satisfaction? Do you wonder why the Church still stands strong despite countless attempts from within and without to destroy it? Why hasn’t its moral code changed in 2,000 years? How did the Church produce incredible figures like Mother Teresa? Could God be in the Catholic Church? Could the Catholic Church possibly be the only true Church that God Himself established?</p>
+      <p style="margin-top:26px">If you ask these, or any other questions about the Catholic faith, you are in the right place.</p>
+      <p>I encourage you to reach out to St. Joan of Arc via the <a href="#cc-form" style="text-decoration:underline">form</a> below; someone will respond, usually within a business day. <em>Any inquiries come with zero commitment</em>. We will meet you at a coffee shop near the church and provide a space where one of us can hear your story and answer any initial questions you might have. The best way to get to know the Catholic Church is to talk with a Catholic, and we are more than happy to provide an opportunity for you.</p>
+      <p style="margin-top:26px">However, if you are not yet comfortable reaching out to us to meet in person, I encourage you to exercise your curiosity in a familiar space for many of us: YouTube! The Ascension Presents video below the form explains why the Catholic Church stands above other Christian Churches (and it is short!). We recommend any video by Fr. Mike Schmitz or Ascension Presents. The second video is from a long-standing philosophy professor who delivers an engaging and simple talk on why any person, regardless of his or her background, should be Catholic.</p>
+      <p style="margin-top:26px">Know of our prayers for you in your faith journey! God Bless!</p>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section id="cc-form" style="background:#f7f7f7;padding:60px 30px 60px">
+    <h2 style="font-family:'Nunito Sans',sans-serif;font-weight:400;font-size:34px;color:#242526;text-align:center;margin-bottom:40px">Let us buy you coffee!</h2>
+    <div style="max-width:1090px;margin:0 auto;background:#fff;border-radius:32px;padding:40px 48px 40px">
+      <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+        <p style="text-align:center;font-size:17px;padding:40px 0;font-weight:400">Thanks for submitting! Someone will respond, usually within a business day.</p>
+      </sc-if>
+      <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+        <form onSubmit="{{ onCcSubmit }}" style="display:flex;flex-direction:column;gap:18px;font-size:13px;font-weight:400">
+          <label style="display:flex;flex-direction:column;gap:9px">Name *<input required type="text" style="height:38px;padding:0 12px;border:1px solid #c9cbd6;border-radius:4px;font-size:15px"></label>
+          <label style="display:flex;flex-direction:column;gap:9px">Email *<input required type="email" style="height:38px;padding:0 12px;border:1px solid #c9cbd6;border-radius:4px;font-size:15px"></label>
+          <label style="display:flex;flex-direction:column;gap:9px">Phone
+            <span style="display:flex;align-items:center;height:38px;border:1px solid #c9cbd6;border-radius:4px;overflow:hidden">
+              <span style="display:flex;align-items:center;gap:5px;padding:0 10px 0 12px;color:#6d6e71;flex:none"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-5.5-3.5-9s1-6.5 3.5-9z"></path></svg><svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"></path></svg></span>
+              <input type="tel" style="flex:1;height:100%;border:none;outline:none;padding:0 8px;font-size:15px;min-width:0">
+            </span>
+          </label>
+          <fieldset style="border:none;display:flex;flex-direction:column;gap:14px">
+            <legend style="margin-bottom:12px">How can we help you?</legend>
+            <label style="display:flex;gap:10px;align-items:center;cursor:pointer"><input type="radio" name="cc_help" style="width:13px;height:13px;accent-color:#50557a;margin:0">I want to chat over a cup of coffee ... not quite sure what else I want.</label>
+            <label style="display:flex;gap:10px;align-items:center;cursor:pointer"><input type="radio" name="cc_help" style="width:13px;height:13px;accent-color:#50557a;margin:0">I have some questions about the Catholic Church.</label>
+            <label style="display:flex;gap:10px;align-items:center;cursor:pointer"><input type="radio" name="cc_help" style="width:13px;height:13px;accent-color:#50557a;margin:0">I want to become Catholic!</label>
+          </fieldset>
+          <label style="display:flex;flex-direction:column;gap:9px">Additional Comments<textarea rows="4" style="padding:10px 12px;border:1px solid #c9cbd6;border-radius:4px;font-size:15px;resize:vertical;min-height:82px"></textarea></label>
+          <button type="submit" style="height:36px;background:#50557a;color:#fff;border:none;font-size:14px;cursor:pointer" style-hover="background:#181e4e">Submit</button>
+        </form>
+      </sc-if>
+    </div>
+  </section>
+
+  <!-- VIDEOS -->
+  <section style="background:#fff;padding:74px 30px 74px">
+    <div style="max-width:1090px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:32px">
+      <iframe src="https://www.youtube-nocookie.com/embed/jJCbCs-y1_k" title="Why Be Catholic and Not Just Christian?" style="width:100%;aspect-ratio:417/227;border:0;display:block" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen=""></iframe>
+      <iframe src="https://www.youtube-nocookie.com/embed/8F7eIrh80V8" title="7 Reasons Why Everyone Should Be Catholic" style="width:100%;aspect-ratio:417/227;border:0;display:block" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen=""></iframe>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:#181e4e;color:#fff;padding:56px 30px 60px">
+    <div style="max-width:1150px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:48px;align-items:start;font-weight:400">
+      <div>
+        <img src="assets/logo_header.avif" alt="St. Joan of Arc" style="height:44px;width:auto;margin-bottom:44px">
+        <div style="display:flex;flex-direction:column;gap:8px;max-width:200px;font-size:14px">
+          <a href="https://www.stjoanarvada.org/about" style="display:flex;justify-content:space-between;color:#fff" style-hover="color:#e9d99e">Welcome<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 9l6 6 6-6"></path></svg></a>
+          <a href="https://www.stjoanarvada.org/worship" style="display:flex;justify-content:space-between;color:#fff" style-hover="color:#e9d99e">Worship<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 9l6 6 6-6"></path></svg></a>
+          <a href="https://www.stjoanarvada.org/learn" style="display:flex;justify-content:space-between;color:#fff" style-hover="color:#e9d99e">Faith Formation<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 9l6 6 6-6"></path></svg></a>
+          <a href="https://www.stjoanarvada.org/ministries" style="color:#fff" style-hover="color:#e9d99e">Ministries</a>
+          <a href="https://www.stjoanarvada.org/catholic-curious" style="color:#d2bd6d">Catholic Curious</a>
+          <a href="https://www.stjoanarvada.org/event-list" style="color:#fff" style-hover="color:#e9d99e">Calendar</a>
+          <a href="https://www.stjoanarvada.org/offer" style="display:flex;justify-content:space-between;color:#fff" style-hover="color:#e9d99e">Offer<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 9l6 6 6-6"></path></svg></a>
+          <a href="https://www.stjoanarvada.org/elc" style="color:#fff" style-hover="color:#e9d99e">ELC</a>
+          <a href="https://www.blastercatholic.org/" style="color:#fff" style-hover="color:#e9d99e">Blaster Catholic</a>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center">
+        <img src="assets/flocknote_logo.avif" alt="flocknote" style="height:46px;width:auto;margin-bottom:22px">
+        <div style="max-width:290px;width:100%">
+          <p style="font-size:13px;line-height:1.7;margin-bottom:18px">Sign up for Flocknote to receive the latest updates and announcements from St. Joan of Arc Catholic Church! Already signed up? <a href="https://stjoanarvada.flocknote.com/" style="color:#fff;text-decoration:underline">Click here.</a></p>
+          <form onSubmit="{{ onSubmit }}" style="display:flex;flex-direction:column;gap:9px">
+            <input type="text" placeholder="First Name" style="height:33px;padding:0 9px;border:1px solid #fff;border-radius:3px;font-size:12px">
+            <input type="text" placeholder="Last Name" style="height:33px;padding:0 9px;border:1px solid #fff;border-radius:3px;font-size:12px">
+            <input type="email" placeholder="Email Address" style="height:33px;padding:0 9px;border:1px solid #fff;border-radius:3px;font-size:12px">
+            <input type="tel" placeholder="Mobile Phone" style="height:33px;padding:0 9px;border:1px solid #fff;border-radius:3px;font-size:12px">
+            <button type="submit" style="align-self:flex-start;padding:7px 15px;background:#2f8fe0;color:#fff;border:none;border-radius:5px;font-size:14px;font-weight:600;cursor:pointer" style-hover="background:#2478c2">Sign Me Up</button>
+          </form>
+          <p style="font-size:12px;color:#aeb2d3;margin-top:10px;min-height:14px">{{ formMsg }}</p>
+        </div>
+      </div>
+      <div style="font-size:15px;line-height:1.55">
+        <p style="font-family:'Montserrat',sans-serif;font-weight:700;color:#d2bd6d;font-size:11px;letter-spacing:1px;margin:6px 0 18px">PARISH OFFICE HOURS</p>
+        <p><strong style="font-weight:700">MONDAY - THURSDAY</strong><br>9:00 a.m. - 5:00 p.m.<br><em>closed 12:00 p.m. - 1:00 p.m.</em><br><strong style="font-weight:700">FRIDAY</strong><br>9:00 a.m. - 12:00 p.m.</p>
+        <p style="margin-top:24px">12735 W. 58th Ave.<br>Arvada, CO 80002<br><a href="mailto:office@stjoanarvada.org" style="color:#fff;text-decoration:underline">office@stjoanarvada.org</a><br>303-420-1232</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GOLD BAR -->
+  <div style="background:#d2bd6d;padding:26px 36px 30px 64px">
+    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 24px">
+      <a href="https://archden.org/"><img src="assets/aod_denver.png" alt="Archdiocese of Denver" style="height:76px;width:auto;filter:brightness(0) saturate(100%)"></a>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;font-size:12px;color:#181e4e;font-weight:400">
+        <a href="https://www.stjoanarvada.org/terms-and-conditions" style="color:#181e4e;text-decoration:underline">Terms and Conditions</a>
+        <a href="https://www.stjoanarvada.org/privacy-policy" style="color:#181e4e;text-decoration:underline">Privacy Policy</a>
+        <span>© 2024 St. Joan of Arc Catholic Church.</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { formMsg: '', sent: false };
+  renderVals() {
+    return {
+      formMsg: this.state.formMsg,
+      sent: this.state.sent,
+      notSent: !this.state.sent,
+      onCcSubmit: (e) => { e.preventDefault(); this.setState({ sent: true }); },
+      onSubmit: (e) => { e.preventDefault(); this.setState({ formMsg: 'Thanks! Check your email to confirm.' }); }
+    };
+  }
+}
+</script>
+</body>
+</html>
